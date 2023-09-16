@@ -2,7 +2,7 @@
 
 #+ATTR_HTML: :class summary
 #+BEGIN_export html
-Quantum Enthusiast & Code Whisperer Coder. Enthusiast of symphonies and switches. Skilled in handling quarks and queries.
+Quantum Enthusiast & Code Whisperer. Enthusiast of symphonies and switches. Skilled in handling quarks and queries.
 #+END_export
 
 * Posts
