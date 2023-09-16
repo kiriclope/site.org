@@ -1,8 +1,8 @@
 #+TITLE: Alexandre Mahrach
 
 #+ATTR_HTML: :class summary
-#+BEGIN_export html
-Quantum Enthusiast & Code Whisperer. Enthusiast of symphonies and switches. Skilled in handling quarks and queries.
+#+BEGIN_export htmlQ
+Quantum Enthusiast & Code Whisperer. Composing symphonies with switches. Skilled in handling quarks and queries.
 #+END_export
 
 * Posts
