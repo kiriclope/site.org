@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Blog</title>
+  <atom:link href="http://mac-vicar.eu/rss.xml" rel="self" type="application/rss+xml" />
+  <link>http://mac-vicar.eu/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Sat, 16 Sep 2023 19:27:43 +0000</pubDate>
+  <lastBuildDate>Sat, 16 Sep 2023 19:27:43 +0000</lastBuildDate>
+  <generator>Emacs 27.2 Org-mode 9.4.4</generator>
+  <webMaster>mahrachalexandre@gmail.com (Alexandre Mahrach)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Blog</title>
+    <link>http://mac-vicar.eu/</link>
+  </image>
+
+
+  <item>
+    <title>My first post</title>
+    <link>http://mac-vicar.eu/posts/first_post/index.html</link>
+    <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
+    <guid isPermaLink="false">http://mac-vicar.eu/posts/first_post/index.html</guid>
+    <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+</channel>
+</rss>
