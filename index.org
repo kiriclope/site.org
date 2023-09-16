@@ -1,0 +1,31 @@
+#+TITLE: Alexandre Mahrach
+
+#+ATTR_HTML: :class summary
+#+BEGIN_export html
+Data Scientist. I like music, keyboards and Legos. Proficient in pop culture references and xkcd.
+#+END_export
+
+* Posts
+  :PROPERTIES:
+  :HTML_CONTAINER_CLASS: post-list
+  :END:
+
+#+INCLUDE: posts/posts.org
+
+Full list [[file:./posts/archive.org][here.]]
+
+-----
+
+# * \faCode Projects/Code
+#   :PROPERTIES:
+#   :HTML_CONTAINER_CLASS: post-list
+#   :END:
+
+# # - <2016-02-27 Sat> an attempt to write a [[https://github.com/dmacvicar/terraform-provider-libvirt][libvirt provider]] for [[https://terraform.io][Terraform]]
+
+* Tutorials
+  :PROPERTIES:
+  :HTML_CONTAINER_CLASS: post-list
+  :END:
+
+- <2023-09-14 Wed> [[file:tutorials/Qiskit/index.org][Intro to Qiskit]]

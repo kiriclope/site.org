@@ -1,0 +1,41 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+TITLE: Introduction to Quantum Computing
+#+DATE: 2023-09-14
+#+AUTHOR: Alexandre Mahrach
+#+FILETAGS: qiskit quantum
+
+* Overview
+1. From bits to qubits: Dirac notation, density matrices, measurements, Bloch sphere
+2. Quantum circuits: basic single-qubit & two-qubit gates, multipartite quantum states
+3. Entanglement: Bell states, Teleportation, Q-sphere
+
+* From bits to qubits
+Classical states for computation are either 0 or 1
+
+In quantum mechanics, a state can be in superposition, ie, simultaneously in 0 and 1.
+
+- Superpositions allow to perform calculations on many states at the same time
+  + quantum algorithms with exponential speed-up
+
+- /But/: once we measure the superposition state, it collapses to one of its states
+  + we can only get one answer and not all the answers to all states in the superposition
+
+- It is not easy to design quantum algorithms, but we can use interference effects
+  +  wrong answers cancel each other out, while the right answer remains
+
+** Dirac notation & density matrices
+
+- Used to describe quantum states: let $a, b \in \mathbb{C}^2$ (2 dimensional vector with complex entries)
+  - ket: $| a \rangle = \begin{pmatrix} a_0 \\ a_1 \end{pmatrix}$
+  - bra: $\langle b | = | b \rangle^{\dagger} = (b_0^*, b_1^*)$
+  - bra-ket: $\langle b | a \rangle = a_0 b_0^* + a_1 b_1^* = \langle a | b \rangle^*$
+  - ket-bra: $| a \rangle \langle b| = \begin{pmatrix} a_0 b_0^* & a_0 b_1^* \\ a_1 b_0^* & a_1 b_1^* \end{pmatrix}$
+
+- We define the pure states $| 0 \rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$  and $| 1 \rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ which are orthogonal  $\langle 0 | 1 \rangle = 1 . 0 + 0 . 1 = 0$
+  - $|0\rangle \langle 0| = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$
+  - $|1\rangle \langle 1| = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$
+  -$\rho=\begin{pmatrix} \rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}=\rho_{00} |0\rangle \langle 0| + \rho_{01} |0\rangle \langle 1| + \rho_{10} |1\rangle \langle 0| + \rho_{00} |1\rangle \langle 1|$
+
+- All quantum states can be described by density matrices, ie normalized positive Hermitian operators, $\rho$ with $tr(\rho)=1$, $\rho\geq 0$, $\rho=\rho^{\dagger}$
+
+  for $\rho=\begin{pmatrix} \rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}$, $tr(\rho)=\rho_{00}+\rho_{11}=1$, $\langle \psi | \rho | \psi \rangle \geq 0 \quad \forall \psi$,

@@ -1,0 +1,4 @@
+* About me
+I am a Data Scientist from Paris, France. I currently work at IDIBAPS, Barcelona, Spain. I studied Physics at Sorbonne Université, where I also studied a Computational Neuroscience.
+
+Here is my [[file:resume.pdf][resume]].
