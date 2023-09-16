@@ -2,7 +2,7 @@
 
 #+ATTR_HTML: :class summary
 #+BEGIN_export html
-Data Scientist. I like music, keyboards and Legos. Proficient in pop culture references and xkcd.
+Quantum Enthusiast & Code Whisperer Coder. Enthusiast of symphonies and switches. Skilled in handling quarks and queries.
 #+END_export
 
 * Posts
