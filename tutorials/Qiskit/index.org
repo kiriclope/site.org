@@ -39,3 +39,31 @@ In quantum mechanics, a state can be in superposition, ie, simultaneously in 0 a
 - All quantum states can be described by density matrices, ie normalized positive Hermitian operators, $\rho$ with $tr(\rho)=1$, $\rho\geq 0$, $\rho=\rho^{\dagger}$
 
   for $\rho=\begin{pmatrix} \rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}$, $tr(\rho)=\rho_{00}+\rho_{11}=1$, $\langle \psi | \rho | \psi \rangle \geq 0 \quad \forall \psi$,
+
+- All quantum states are normalized, ie, $\langle \psi | \psi \rangle = 1$
+
+- Spectral decomposition: for every density matrix $\rho \exists$ and orthonormal basis ${\ i \rangle}_i$ s.t. $\rho = \sum_i \lambda_i | i \rangle \langle i |$ where $| i \rangle$ eigenstates, $\lambda_i$ eigenvalues and $\sum_i \lambda_i = 1$
+
+- A density matrix is pure if $\rho = | \phi \rangle \langle \phi |$, otherwise it is mixed.
+  - if $\rho$ is pure, one eigenvalue equals 1, all others are 0.
+    $tr(\rho^2)=\sum_i \lambda_i^2=1$ if $\rho$ pure, otherwise $tr(\rho^2)<1$
+
+** Measurements
+We choose orthogonal bases to describe & measure quantum states (projective measurement).
+During a measure onto the basis$\{ | 0 \rangle , | 1 \rangle \}$, the state will collapse into either state $| 0 \rangle$ or $| 1 \rangle$.
+We call this a z-measurement ($| 0 \rangle$ and $| 1 \rangle$ are the eigenstates of $\sigma_z$)
+
+There are infinitely many different bases, but the most common ones are:
+$\{ | + \rangle, | - \rangle \}  = \{ \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle), \frac{1}{\sqrt{2}} (| 0 \rangle  - | 1 \rangle) \}$ (eigenstates of $\sigma_x$)
+$\{ | +i \rangle, | -i \rangle \}  = \{ \frac{1}{\sqrt{2}} (| 0 \rangle + i | 1 \rangle), \frac{1}{\sqrt{2}} (| 0 \rangle  - i | 1 \rangle) \}$ (eigenstates of $\sigma_y$)
+
+- Born Rule:
+  the probability that a state $| \psi \rangle$ collapses during a projective measurement onto the basis $\{ |X \rangle, |X^\perp \rangle \}$ to the state $| X \rangle$ is given by $P(x) = | \langle x | \psi \rangle|^2$ where $\sum_i P(x_i) = 1$
+
+** Bloch Sphere:
+We can write any normalizedd (pure) state as $| \psi \rangle = \cos{\frac{\theta}{2}} | 0 \rangle + e^{i \phi}\sin{\frac{\theta}{2}} | 1 \rangle$ where $\phi \in [0, 2 \pi ]$ describes the relative phase and $\theta \in [0, \pi]$ determines the probability to measure $| 0 \rangle$ and $| 1 \rangle$:   $P(| 0 \rangle) =\cos^2 \frac{\theta}{2}$ and $P(| 1 \rangle)=\sin^2 \frac{\theta}{2}$
+
+All normalized pure states can be illustrated on the surface of a sphere with radius 1, which we call the Blach sphere.
+The coordinates of such a state are given by the Bloch vector $\vec{r} =\begin{pmatrix} \sin{\theta} \cos{\phi} \\ \sin{\theta} \sin{\phi} \\ \cos{\theta}\end{pmatrix}$
+
+On the Bloch sphere, angles are twice as big as in Hilbert space. Here, $\theta$ is the angle on the sphere while $\frac{\theta}{2}$ is the actual angle in Hilbert space.
