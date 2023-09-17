@@ -81,7 +81,7 @@ add scheme here
 *** Elementary gates: the Pauli matrices
 $\sigma_x, \sigma_y, \sigma_z$ are the so-called Pauli matrices, $\sigma_i^2 =\mathcal{1}$
 
-Together with $\mathcal{1}$ they form a basis of 2x2 matrices
+Together with $\mathds{1}$ they form a basis of 2x2 matrices
 
 Any 1-qubit rotation can be written as a linear combination of them
 
@@ -183,5 +183,15 @@ $| \psi^{ij}\rangle = ( \mathcal{1} \otimes \sigma_x^j \sigma_z^i) | \psi^{00} \
 
 (add scheme)
 
-| $ \mid ij \rangle_{AB}$ | $\mathcal{H}_A \otimes \mathcal{1}_B \mid ij \rangle_{AB}$ | $\mid \psi^{ij} \rangle$ |
-|                         |                                                            |                          |
+| $\mid ij \rangle_{AB}$ |                 | $\mathcal{H}_A \otimes \mathds{1}_B \mid ij \rangle_{AB}$ |                    | $\mid \psi^{ij} \rangle$                                                        |
+| $\mid 00 \rangle$      | $\mathcal{H_A}$ | $\frac{1}{\sqrt{2}}(\mid 00 \rangle + \mid 10 \rangle)$   | $\text{CNOT}_{AB}$ | $\frac{1}{\sqrt{2}}(\mid 00 \rangle + \mid 11 \rangle) = \mid \psi^{00}\rangle$ |
+| $\mid 01 \rangle$      |                 | $\frac{1}{\sqrt{2}}(\mid 01 \rangle + \mid 11 \rangle)$   |                    | $\frac{1}{\sqrt{2}}(\mid 01 \rangle + \mid 10 \rangle) = \mid \psi^{01}\rangle$ |
+| $\mid 10 \rangle$      |                 | $\frac{1}{\sqrt{2}}(\mid 00 \rangle + \mid 10 \rangle)$   |                    | $\frac{1}{\sqrt{2}}(\mid 00 \rangle - \mid 11 \rangle) = \mid \psi^{10}\rangle$ |
+| $\mid 11 \rangle$      |                 | $\frac{1}{\sqrt{2}}(\mid 01 \rangle - \mid 11 \rangle)$   |                    | $\frac{1}{\sqrt{2}}(\mid 01 \rangle - \mid 10 \rangle) = \mid \psi^{11}\rangle$ |
+
+
+
+
+
+
+
