@@ -299,8 +299,8 @@
          :base-extension "org"
          :recursive t
          :publishing-directory (expand-file-name "public/tutorials" (projectile-project-root))
-         :publishing-function 'duncan/org-html-publish-post-to-html
-         ;;  :publishing-function 'duncan/org-html-publish-to-html
+         ;; :publishing-function 'duncan/org-html-publish-post-to-html
+         :publishing-function 'duncan/org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
          :html-preamble t
@@ -374,5 +374,3 @@
 
 (provide 'publish)
 ;;; publish.el ends here
-
-
