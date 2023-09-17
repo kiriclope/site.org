@@ -2,7 +2,7 @@
 
 #+ATTR_HTML: :class summary
 #+BEGIN_export html
-Quantum Enthusiast & Code Whisperer. Skilled in handling quarks and queries.
+Machine Learning & Quantum Enthusiast. Skilled in handling quarks and queries.
 #+END_export
 
 * Posts
