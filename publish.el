@@ -306,8 +306,8 @@
          :auto-sitemap t
          :sitemap-style 'list
          :sitemap-filename "tutorials.org"
-         :sitemap-function 'duncan/sitemap-for-rss-sitemap-function
-         :sitemap-format-entry 'duncan/sitemap-for-rss-sitemap-format-entry)
+         :sitemap-function 'duncan/latest-posts-sitemap-function
+         :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
    ;; (list "tutorials"
    ;;       :base-directory "./public/tutorials"
    ;;       :exclude (regexp-opt '("tutorials.org"))
