@@ -296,26 +296,40 @@
          :html-head-include-scripts nil
          :html-head-include-default-style nil)
    (list "tutorials"
+         :base-directory "./tutorials"
          :base-extension "org"
          :recursive t
-         :publishing-directory (expand-file-name "public/tutorials" (projectile-project-root))
-         ;; :publishing-function 'duncan/org-html-publish-post-to-html
-         :publishing-function 'duncan/org-html-publish-to-html
+         :publishing-directory "./public/tutorials"
+         :publishing-function 'org-html-publish-to-html
          :section-numbers nil
-         :with-toc nil
-         :html-preamble t
-         :html-preamble-format (duncan--pre/postamble-format 'preamble)
-         :html-postamble t
-         :html-postamble-format (duncan--pre/postamble-format 'postamble)
-         :html-head-include-scripts nil
-         :html-head-include-default-style nil
+         :with-toc t
          :auto-sitemap t
-         :sitemap-filename "tutorials.org"
          :sitemap-style 'list
-         :sitemap-title nil
-         :sitemap-sort-files 'anti-chronologically
+         :sitemap-filename "tutorials.org"
          :sitemap-function 'duncan/latest-posts-sitemap-function
          :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
+   ;; (list "tutorials"
+   ;;       :base-directory "./public/tutorials"
+   ;;       :exclude (regexp-opt '("tutorials.org"))
+   ;;       :base-extension "org"
+   ;;       :recursive t
+   ;;       :publishing-directory (expand-file-name "public/tutorials" (projectile-project-root))
+   ;;       :publishing-function 'duncan/org-html-publish-to-html
+   ;;       :section-numbers nil
+   ;;       :with-toc nil
+   ;;       :html-preamble t
+   ;;       :html-preamble-format (duncan--pre/postamble-format 'preamble)
+   ;;       :html-postamble t
+   ;;       :html-postamble-format (duncan--pre/postamble-format 'postamble)
+   ;;       :html-head-include-scripts nil
+   ;;       :html-head-include-default-style nil
+   ;;       :auto-sitemap t
+   ;;       :sitemap-filename "tutorials.org"
+   ;;       :sitemap-style 'list
+   ;;       :sitemap-title nil
+   ;;       :sitemap-sort-files 'anti-chronologically
+   ;;       :sitemap-function 'duncan/latest-posts-sitemap-function
+   ;;       :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
    (list "assets"
          :base-directory "./"
          :exclude (regexp-opt '("assets" "public"))
@@ -374,3 +388,5 @@
 
 (provide 'publish)
 ;;; publish.el ends here
+
+
