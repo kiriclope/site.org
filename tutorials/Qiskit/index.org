@@ -140,3 +140,27 @@ These states are correlated and sometimes even entangled (very strong correlatio
 e.g. $| \psi^{(00)}\rangle_{AB}= \frac{1}{\sqrt{2}} (| 00 \rangle_{AB} + | 11 \rangle_{AB}) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0  \\ 1 \end{pmatrix}$ a so-called Bell state, used for teleportation, cryptography, Bell test, ...
 
 ** Two-qubit gates
+Classical example: XOR gate (add scheme) irreversible: given the output we cannot recover the input
+
+| XOR | input | output |
+|     | x y   |  x + y |
+|     | 0 0   |      0 |
+|     | 0 1   |      1 |
+|     | 1 0   |      1 |
+|     | 1 1   |      0 |
+
+Quantum example: CNOT gate (add circuit)
+
+as quantum theory is unitary, gates are reversible
+
+$\text{CNOT}=\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$
+
+$\text{CNOT} | 00 \rangle_{xy} = | 00 \rangle_{xy}$
+
+$\text{CNOT} | 10 \rangle_{xy} = | 11 \rangle_{xy}$
+
+We can show that every classical function $f$ can be described by a reversible circuit.
+
+Quantum circuits can perform all functions that can be calculated classically.
+
+* Entanglement
