@@ -1,4 +1,4 @@
-#+TITLE: Sitemap for project tutorials
+#+TITLE: Tutorials
 
 - Qiskit
   - [[file:Qiskit/index.org][Introduction to Quantum Computing]]

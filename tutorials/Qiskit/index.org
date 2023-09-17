@@ -196,7 +196,8 @@ classical outcomes $i,j$ correspond to a measure of the state $| \psi^{ij} \rang
 
 ** Teleportation
 
-Alice wants to send her (unknown) state $|\phi \rangle_S = \alpha | 0 \rangle_S + \beta | 1 \rangle_S$ to Bob. She can only send him two classical bit though.
+Alice wants to send her (unknown) state $|\phi \rangle_S = \alpha | 0 \rangle_S + \beta | 1 \rangle_S$ to Bob.
+She can only send him two classical bit though.
 They both share the maximally entangled state $| \psi^{00} \rangle_{AB} = \frac{1}{\sqrt{2}} (| 00 \rangle_{AB} + | 11 \rangle_{AB} )$.
 
 - Initial state of the total system:
