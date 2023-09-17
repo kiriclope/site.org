@@ -97,17 +97,39 @@ $\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = i \sigma_x . \sigma_
 
 **** The Hadamard gate
 One of the most important gates for quantum circuits
+
 $\mathcal{H} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$
+
 $\mathcal{H} | 0 \rangle =  | + \rangle$ and $\mathcal{H} | 1 \rangle =  | - \rangle$
+
 Creates superposition of states!
+
 $\mathcal{H} | + \rangle =  | 0 \rangle$ and $\mathcal{H} | - \rangle =  | 1 \rangle$
+
 Also used to change between X and Z basis
 
 **** The $\mathcal{S}$ gate
 $\mathcal{S} = \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix}$
+
 Adds $90°$ to the phase $\phi$
+
 $\mathcal{S} | + \rangle =  | +i \rangle$ and $\mathcal{H} | - \rangle =  | -i \rangle$
+
 $\mathcal{S} . \mathcal{H}$ is used to change from Z to Y basis
 
 ** Multipartite quantum states
 We use tensor products to describe multiple states
+
+$| a \rangle \otimes | b \rangle = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} \otimes \begin{pmatrix} b_1 \\ b_2 \end{pmatrix} = \begin{pmatrix} a_1 b_1\\ a_1 b_2 \\ a_2 b_1 \\ a_2 b_2 \end{pmatrix}$
+
+Example: system A is in state $| 1 \rangle_A$ and system B is in state $| 0 \rangle_B$
+
+the total bipartite state is $| 10 \rangle_{AB} = | 1 \rangle_A \otimes | 0 \rangle_B = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}$
+
+States of this form are called uncorrelated, but there are also bipartite states that cannot be written as $| \psi \rangle_A \otimes | \phi \rangle_B$.
+
+These states are correlated and sometimes even entangled (very strong correlation)
+
+e.g. $| \psi^{(00)}\rangle_{AB}= \frac{1}{\sqrt{2}} (| 00 \rangle_{AB} + | 11 \rangle_{AB}) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0  \\ 1 \end{pmatrix}$ a so-called Bell state, used for teleportation, cryptography, Bell test, ...
+
+** Two-qubit gates
