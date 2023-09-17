@@ -207,11 +207,15 @@ $| \phi \rangle_S \otimes | \psi^{00} \rangle_{AB}$
 
 (add scheme)
 
+1. Alice performs a measurement on S and A in the Bell basis.
+2. She sends her classical outputs $i,j$ to Bob.
+3. Bob applies $\sigma_z^i \sigma_x^j$ to his qubit and gets $| \phi \rangle$.
+   
 | Alice's meas.           | Bob's state | Alice sends | Bob applies | Bob's final state |
-| $\mid \psi^{00}\rangle$ | $\mid \phi \rangle_B$ |  0 0        |    $\mathdd{1}$ |  $\mid \phi \rangle_B |
-| $\mid \psi^{01}\rangle$ | $\sigma_x \mid \phi \rangle_B$ |  0 1        |    $\sigma_x$   |  $\mid \phi \rangle_B |
-| $\mid \psi^{10}\rangle$ | $\sigma_z \mid \phi \rangle_B$ |  1 0        |    $\sigma_z$   |  $\mid \phi \rangle_B |
-| $\mid \psi^{11}\rangle$ | $\sigma_x \sigma_z \mid \phi \rangle_B$ |  1 1        |    $\sigma_z \sigma_x$ |  $\mid \phi \rangle_B |
+| $\mid \psi^{00}\rangle$ | $\mid \phi \rangle_B$ |  0 0        |    $1$          |  $\mid \phi \rangle_B$ |
+| $\mid \psi^{01}\rangle$ | $\sigma_x \mid \phi \rangle_B$ |  0 1        |    $\sigma_x$   |  $\mid \phi \rangle_B$ |
+| $\mid \psi^{10}\rangle$ | $\sigma_z \mid \phi \rangle_B$ |  1 0        |    $\sigma_z$   |  $\mid \phi \rangle_B$ |
+| $\mid \psi^{11}\rangle$ | $\sigma_x \sigma_z \mid \phi \rangle_B$ |  1 1        |    $\sigma_z \sigma_x$ |  $\mid \phi \rangle_B$ |
 
   Note that Alice's state collapsed during the measurement, so she does not have the initial state $| \phi \rangle$ anymore.
   This is expected due to the no-cloning theorem, as she cannot copy her state, but just send her state to Bob when destroying her own.
