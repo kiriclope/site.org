@@ -303,12 +303,6 @@
          :publishing-function 'org-html-publish-to-html
          :section-numbers nil
          :with-toc t
-         :html-preamble t
-         :html-preamble-format (duncan--pre/postamble-format 'preamble)
-         :html-postamble t
-         :html-postamble-format (duncan--pre/postamble-format 'postamble)
-         :html-head-include-scripts nil
-         :html-head-include-default-style nil         
          :auto-sitemap t
          :sitemap-style 'list
          :sitemap-filename "tutorials.org"
