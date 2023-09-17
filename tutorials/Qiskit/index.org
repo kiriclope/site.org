@@ -42,7 +42,7 @@ In quantum mechanics, a state can be in superposition, ie, simultaneously in 0 a
 
 - All quantum states are normalized, ie, $\langle \psi | \psi \rangle = 1$
 
-- Spectral decomposition: for every density matrix $\rho \exists$ and orthonormal basis ${\ i \rangle}_i$ s.t. $\rho = \sum_i \lambda_i | i \rangle \langle i |$ where $| i \rangle$ eigenstates, $\lambda_i$ eigenvalues and $\sum_i \lambda_i = 1$
+- Spectral decomposition: for every density matrix $\rho \exists$ and orthonormal basis $\{\ i \rangle\}_i$ s.t. $\rho = \sum_i \lambda_i | i \rangle \langle i |$ where $| i \rangle$ eigenstates, $\lambda_i$ eigenvalues and $\sum_i \lambda_i = 1$
 
 - A density matrix is pure if $\rho = | \phi \rangle \langle \phi |$, otherwise it is mixed.
   - if $\rho$ is pure, one eigenvalue equals 1, all others are 0.
@@ -79,7 +79,7 @@ add scheme here
 - Classical example: the NOT gate (add scheme)
 - Quantum example: as quantum theory is unitary, quantum gates are represented by unitary matrices: $\mathcal{U}^{\dagger}\mathcal{U}=1$
 *** Elementary gates: the Pauli matrices
-$\sigma_x, \sigma_y, sigma_z$ are the so-called Pauli matrices
+$\sigma_x, \sigma_y, \sigma_z$ are the so-called Pauli matrices
 $\sigma_i^2 =\mathcal{1}$
 Together with $\mathcal{1}$ they form a basis of 2x2 matrices
 Any 1-qubit rotation can be written as a linear combination of them
