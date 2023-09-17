@@ -248,7 +248,7 @@
          :publishing-directory "./public"
          :publishing-function 'ignore
          ;;:publishing-function 'duncan/org-rss-publish-to-rss
-         :html-link-home "http://mac-vicar.eu/"
+         :html-link-home "http://alexm.codes/"
          :html-link-use-abs-url t
          :auto-sitemap t
          :sitemap-style 'list
@@ -279,7 +279,7 @@
          :base-extension "org"
          :publishing-directory "./public"
          :publishing-function 'duncan/org-rss-publish-to-rss
-         :html-link-home "http://mac-vicar.eu/"
+         :html-link-home "http://alexm.codes/"
          :html-link-use-abs-url t)
    (list "site"
          :base-directory "./"
@@ -305,7 +305,7 @@
          :with-toc t
          :auto-sitemap t
          :sitemap-style 'list
-         :sitemap-filename "rss.org"
+         :sitemap-filename "tutorials.org"
          :sitemap-function 'duncan/sitemap-for-rss-sitemap-function
          :sitemap-format-entry 'duncan/sitemap-for-rss-sitemap-format-entry)
    ;; (list "tutorials"
