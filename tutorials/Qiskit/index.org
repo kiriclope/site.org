@@ -164,3 +164,24 @@ We can show that every classical function $f$ can be described by a reversible c
 Quantum circuits can perform all functions that can be calculated classically.
 
 * Entanglement
+
+If a pure state $| \psi \rangle_{AB}$ on systems A and B cannot be written as $| \phi \rangle_A \otimes | \Phi \rangle_B$, it is entangled
+
+** Bell states
+There are four so-called Bell states that are maximally entangled and constitute an orthonormal basis:
+
+$| \psi^{00}\rangle = \frac{1}{\sqrt{2}} (| 00 \rangle + | 11 \rangle)$
+
+$| \psi^{10}\rangle = \frac{1}{\sqrt{2}} (| 00 \rangle - | 11 \rangle)$
+
+$| \psi^{01}\rangle = \frac{1}{\sqrt{2}} (| 01 \rangle + | 10 \rangle)$
+
+In general, we can write
+$| \psi^{ij}\rangle = ( \mathcal{1} \otimes \sigma_x^j \sigma_z^i) | \psi^{00} \rangle$
+
+** Creation of Bell states
+
+(add scheme)
+
+| $ \mid ij \rangle_{AB}$ | $\mathcal{H}_A \otimes \mathcal{1}_B \mid ij \rangle_{AB}$ | $\mid \psi^{ij} \rangle$ |
+|                         |                                                            |                          |

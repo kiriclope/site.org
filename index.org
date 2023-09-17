@@ -28,4 +28,4 @@ Full list [[file:./posts/archive.org][here.]]
   :HTML_CONTAINER_CLASS: post-list
   :END:
 
-- <2023-09-14 Wed> [[file:tutorials/Qiskit/index.org][Intro to Qiskit]]
+- <2023-09-14 Wed> [[file:tutorials/Qiskit/index.org][Intro to Quantum Computing]]
