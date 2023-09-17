@@ -79,19 +79,26 @@ add scheme here
 - Classical example: the NOT gate (add scheme)
 - Quantum example: as quantum theory is unitary, quantum gates are represented by unitary matrices: $\mathcal{U}^{\dagger}\mathcal{U}=1$
 *** Elementary gates: the Pauli matrices
-$\sigma_x, \sigma_y, \sigma_z$ are the so-called Pauli matrices
-$\sigma_i^2 =\mathcal{1}$
+$\sigma_x, \sigma_y, \sigma_z$ are the so-called Pauli matrices, $\sigma_i^2 =\mathcal{1}$
+
 Together with $\mathcal{1}$ they form a basis of 2x2 matrices
+
 Any 1-qubit rotation can be written as a linear combination of them
 
 **** $\sigma_x$ the bit flip gate
 $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$
+
 $\sigma_x | 0 \rangle =  | 1 \rangle$ and $\sigma_x | 1 \rangle =  | 0 \rangle$
+
 rotation around x-axis by $\pi$
+
 **** $\sigma_z$ the phase flip gate
 $\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$
+
 $\sigma_z | + \rangle =  | - \rangle$ and $\sigma_x | + \rangle =  | - \rangle$
+
 rotation around z-axis by $\pi$
+
 **** $\sigma_y$ the bit & phase flip gate
 $\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = i \sigma_x . \sigma_z$
 
