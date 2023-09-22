@@ -14,8 +14,8 @@
   <link>http://alexm.codes/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sun, 17 Sep 2023 15:59:35 +0000</pubDate>
-  <lastBuildDate>Sun, 17 Sep 2023 15:59:35 +0000</lastBuildDate>
+  <pubDate>Fri, 22 Sep 2023 14:22:43 +0000</pubDate>
+  <lastBuildDate>Fri, 22 Sep 2023 14:22:43 +0000</lastBuildDate>
   <generator>Emacs 27.2 Org-mode 9.4.4</generator>
   <webMaster>mahrachalexandre@gmail.com (Alexandre Mahrach)</webMaster>
   <image>
@@ -26,11 +26,29 @@
 
 
   <item>
+    <title>Quantum Neural Nets</title>
+    <link>http://alexm.codes/posts/19_09_23_QNN/index.html</link>
+    <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
+    <guid isPermaLink="false">http://alexm.codes/posts/19_09_23_QNN/index.html</guid>
+    <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
     <title>My first post</title>
     <link>http://alexm.codes/posts/first_post/index.html</link>
     <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
     <guid isPermaLink="false">http://alexm.codes/posts/first_post/index.html</guid>
     <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>Introduction to Qiskit</title>
+    <link>http://alexm.codes/posts/qiskit_lab_1/index.html</link>
+    <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
+    <guid isPermaLink="false">http://alexm.codes/posts/qiskit_lab_1/index.html</guid>
+    <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
 
     <description><![CDATA[]]></description>
   </item>
