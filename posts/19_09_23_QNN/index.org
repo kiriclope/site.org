@@ -1,0 +1,20 @@
+#+TITLE: Quantum Neural Nets
+#+DATE: <2023-09-19 Tue>
+#+PROPERTY: header-args:ipython :results both :exports both :async yes :session py kernel: quantum
+
+* Intro 
+Qiskit provides different methods to compute gradients of expectation values, let's explore them!
+
+The parameterized ansatz state is $|\Psi(\vec\theta)\rangle = U(\vec\theta)|0\rangle$ where $U(\vec\theta)$ is given be the following circuit
+
+#+begin_src ipython
+from qiskit.circuit.library import RealAmplitudes
+
+ansatz = RealAmplitudes(num_qubits=2, reps=1, entanglement='linear').decompose()
+ansatz.draw('mpl', style='iqx')
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/6eb63ca95e3e6d6630c7de1f6e3e246434bd9560.png]]
+
+* 
