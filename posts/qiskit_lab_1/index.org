@@ -1,4 +1,5 @@
 #+Title: Introduction to Qiskit
+#+PROPERTY: header-args:ipython :results both :exports both :async yes :session mypy :kernel python3
 
 * Intro to Qiskit
 
