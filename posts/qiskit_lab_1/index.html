@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 22 Sep. 2023 -->
+<!-- 04 Oct. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Introduction to Qiskit</title>
@@ -80,11 +80,11 @@
 <main id="content">
 <header>
 <h1 class="title">Introduction to Qiskit</h1>
-<p class="subtitle">Sep 22, 2023</p>
+<p class="subtitle">Oct 04, 2023</p>
 </header>
-<section id="outline-container-org994e385" class="outline-2">
-<h2 id="org994e385">Intro to Qiskit</h2>
-<div class="outline-text-2" id="text-org994e385">
+<section id="outline-container-org7a930e2" class="outline-2">
+<h2 id="org7a930e2">Intro to Qiskit</h2>
+<div class="outline-text-2" id="text-org7a930e2">
 <div class="org-src-container">
 <pre class="src src-ipython">import numpy as np
 
@@ -97,9 +97,9 @@ from qiskit_textbook.problems import dj_problem_oracle
 </div>
 </div>
 
-<div id="outline-container-org2a4f517" class="outline-3">
-<h3 id="org2a4f517">Basic Rotations on One Qubit and Measurements on the Bloch Sphere</h3>
-<div class="outline-text-3" id="text-org2a4f517">
+<div id="outline-container-orge118a74" class="outline-3">
+<h3 id="orge118a74">Basic Rotations on One Qubit and Measurements on the Bloch Sphere</h3>
+<div class="outline-text-3" id="text-orge118a74">
 <p>
 Before getting into complicated circuits on many qubits, let us start by looking at a single qubit. Read this chapter: <a href="https://qiskit.org/textbook/ch-states/introduction.html">https://qiskit.org/textbook/ch-states/introduction.html</a> to learn the basics about the Bloch sphere, Pauli operators, as well as the Hadamard gate and the \(S\) and \(S^\dagger\) gates. 
 </p>
@@ -118,9 +118,9 @@ qc.h(0)    # rotation by Pi around an axis located halfway between x and z
 </p>
 </div>
 
-<div id="outline-container-org4e0bef8" class="outline-4">
-<h4 id="org4e0bef8">1.) Let us start easy by performing a bit flip. The goal is to reach the state \(|1\rangle\).</h4>
-<div class="outline-text-4" id="text-org4e0bef8">
+<div id="outline-container-orga66d7d6" class="outline-4">
+<h4 id="orga66d7d6">1.) Let us start easy by performing a bit flip. The goal is to reach the state \(|1\rangle\).</h4>
+<div class="outline-text-4" id="text-orga66d7d6">
 <div class="org-src-container">
 <pre class="src src-ipython">qc = QuantumCircuit(1)
 qc.x(0)
@@ -130,16 +130,16 @@ plot_bloch_multivector(state)
 </div>
 
 
-<figure id="org5288f83">
+<figure id="org4855057">
 <img src="./.ob-jupyter/0a354ed8ae7b7a4718420759c96092bcfb7d43a9.png" alt="0a354ed8ae7b7a4718420759c96092bcfb7d43a9.png">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org952d792" class="outline-4">
-<h4 id="org952d792">2.) Next, we would like to create superposition. The goal is to reach the state \(|+\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle + |1\rangle\right)\).</h4>
-<div class="outline-text-4" id="text-org952d792">
+<div id="outline-container-org955f3ce" class="outline-4">
+<h4 id="org955f3ce">2.) Next, we would like to create superposition. The goal is to reach the state \(|+\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle + |1\rangle\right)\).</h4>
+<div class="outline-text-4" id="text-org955f3ce">
 <div class="org-src-container">
 <pre class="src src-ipython">qc = QuantumCircuit(1)
 qc.h(0)  
@@ -149,16 +149,16 @@ plot_bloch_multivector(state)
 </div>
 
 
-<figure id="orgdaf01e7">
+<figure id="org4a771cd">
 <img src="./.ob-jupyter/1e72693ded722b88f666b81e8152f8aefe15f330.png" alt="1e72693ded722b88f666b81e8152f8aefe15f330.png">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org352a53f" class="outline-4">
-<h4 id="org352a53f">3.) Let&rsquo;s combine those two. The goal is to reach the state \(|-\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - |1\rangle\right)\).</h4>
-<div class="outline-text-4" id="text-org352a53f">
+<div id="outline-container-org23e17ed" class="outline-4">
+<h4 id="org23e17ed">3.) Let&rsquo;s combine those two. The goal is to reach the state \(|-\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - |1\rangle\right)\).</h4>
+<div class="outline-text-4" id="text-org23e17ed">
 <div class="org-src-container">
 <pre class="src src-ipython">qc = QuantumCircuit(1)
 qc.x(0)
@@ -169,16 +169,16 @@ plot_bloch_multivector(state)
 </div>
 
 
-<figure id="org7b6640b">
+<figure id="orgd78cace">
 <img src="./.ob-jupyter/52421ba72088ea5e243f54719401e1a2a4208f72.png" alt="52421ba72088ea5e243f54719401e1a2a4208f72.png">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgbd811da" class="outline-4">
-<h4 id="orgbd811da">4.) Finally, we move on to the complex numbers. The goal is to reach the state \(|- i\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - i|1\rangle\right)\).</h4>
-<div class="outline-text-4" id="text-orgbd811da">
+<div id="outline-container-orge733905" class="outline-4">
+<h4 id="orge733905">4.) Finally, we move on to the complex numbers. The goal is to reach the state \(|- i\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - i|1\rangle\right)\).</h4>
+<div class="outline-text-4" id="text-orge733905">
 <div class="org-src-container">
 <pre class="src src-ipython">qc = QuantumCircuit(1)
 qc.h(0)
@@ -191,7 +191,7 @@ plot_bloch_multivector(state)
 </div>
 
 
-<figure id="org67b0491">
+<figure id="org3941358">
 <img src="./.ob-jupyter/f88ec8ef08e8656cd717237a90c20c3f87855635.png" alt="f88ec8ef08e8656cd717237a90c20c3f87855635.png">
 
 </figure>
@@ -199,9 +199,9 @@ plot_bloch_multivector(state)
 </div>
 </div>
 
-<div id="outline-container-org177aba1" class="outline-3">
-<h3 id="org177aba1">Quantum Circuits Using Multi-Qubit Gates</h3>
-<div class="outline-text-3" id="text-org177aba1">
+<div id="outline-container-orgeb7a364" class="outline-3">
+<h3 id="orgeb7a364">Quantum Circuits Using Multi-Qubit Gates</h3>
+<div class="outline-text-3" id="text-orgeb7a364">
 <p>
 Great job! Now that you&rsquo;ve understood the single-qubit gates, let us look at gates on multiple qubits. Check out this chapter if you would like to refresh the theory: <a href="https://qiskit.org/textbook/ch-gates/introduction.html">https://qiskit.org/textbook/ch-gates/introduction.html</a>.
 </p>
@@ -222,9 +222,9 @@ We start with an easy gate on two qubits, the controlled-NOT (also CNOT) gate . 
 </p>
 </div>
 
-<div id="outline-container-org3791e4f" class="outline-4">
-<h4 id="org3791e4f">5.) Construct the Bell state \(|\Psi^+\rangle = \frac{1}{\sqrt{2}}\left(|01\rangle + |10\rangle\right)\).</h4>
-<div class="outline-text-4" id="text-org3791e4f">
+<div id="outline-container-orgd0f3dc5" class="outline-4">
+<h4 id="orgd0f3dc5">5.) Construct the Bell state \(|\Psi^+\rangle = \frac{1}{\sqrt{2}}\left(|01\rangle + |10\rangle\right)\).</h4>
+<div class="outline-text-4" id="text-orgd0f3dc5">
 <div class="org-src-container">
 <pre class="src src-ipython">qc = QuantumCircuit(2)
 qc.h(0)
@@ -235,7 +235,7 @@ qc.draw('mpl')
 </div>
 
 
-<figure id="orgdeeafff">
+<figure id="orgb6ad475">
 <img src="./.ob-jupyter/d8ad5f1ec8dde9080eb4a1d55a28cd4b96890b35.png" alt="d8ad5f1ec8dde9080eb4a1d55a28cd4b96890b35.png">
 
 </figure>
@@ -253,8 +253,8 @@ plot_histogram(counts) # let us plot a histogram to see the possible out
 </div>
 
 
-<figure id="orgb6f82d0">
-<img src="./.ob-jupyter/6226a4d3a5b5d0d3f0922e906395148b7c703acd.png" alt="6226a4d3a5b5d0d3f0922e906395148b7c703acd.png">
+<figure id="orgd8ecbbe">
+<img src="./.ob-jupyter/a92d2cc9d3b2cae377dedd95d1e569939a2cca46.png" alt="a92d2cc9d3b2cae377dedd95d1e569939a2cca46.png">
 
 </figure>
 
@@ -265,9 +265,9 @@ As you can see in the histogram, the only possible outputs are &ldquo;01&rdquo; 
 </div>
 
 
-<div id="outline-container-org9dc73c8" class="outline-4">
-<h4 id="org9dc73c8">6.) Write a function that builds a quantum circuit on 3 qubits and creates the GHZ-like state, \(|\Psi\rangle = \frac{1}{\sqrt{2}} \left(|010\rangle - |101 \rangle \right)\).</h4>
-<div class="outline-text-4" id="text-org9dc73c8">
+<div id="outline-container-orge0158db" class="outline-4">
+<h4 id="orge0158db">6.) Write a function that builds a quantum circuit on 3 qubits and creates the GHZ-like state, \(|\Psi\rangle = \frac{1}{\sqrt{2}} \left(|010\rangle - |101 \rangle \right)\).</h4>
+<div class="outline-text-4" id="text-orge0158db">
 <p>
 Hint: the following circuit constructs the GHZ state, \(|GHZ\rangle = \frac{1}{\sqrt{2}} \left(|000\rangle + |111 \rangle \right)\):
 </p>
@@ -284,7 +284,7 @@ qc.draw('mpl')
 </div>
 
 
-<figure id="org70f9ae1">
+<figure id="org97972cf">
 <img src="./.ob-jupyter/5da0cc4bb5f75ee0974b4d79ea629d0bd2fce133.png" alt="5da0cc4bb5f75ee0974b4d79ea629d0bd2fce133.png">
 
 </figure>
@@ -298,8 +298,8 @@ plot_histogram(counts) # let us plot a histogram to see the
 </div>
 
 
-<figure id="orge666a38">
-<img src="./.ob-jupyter/ee6627bf3a28adfe19cb11dff0840724d8ed8715.png" alt="ee6627bf3a28adfe19cb11dff0840724d8ed8715.png">
+<figure id="orgb54a13e">
+<img src="./.ob-jupyter/08d41ff0551357a8215b3ea02c14d04384a5c400.png" alt="08d41ff0551357a8215b3ea02c14d04384a5c400.png">
 
 </figure>
 
@@ -311,9 +311,9 @@ Congratulations for finishing these introductory exercises! Hopefully, they got 
 </div>
 </section>
 
-<section id="outline-container-org6c7b354" class="outline-2">
-<h2 id="org6c7b354">Oracles and the Deutsch-Jozsa algorithm</h2>
-<div class="outline-text-2" id="text-org6c7b354">
+<section id="outline-container-org2ca49f1" class="outline-2">
+<h2 id="org2ca49f1">Oracles and the Deutsch-Jozsa algorithm</h2>
+<div class="outline-text-2" id="text-org2ca49f1">
 <p>
 Many quantum algoritms revolve around the notion of so called \(\textit{oracles}\). An oracle is a function that can be considered as a &rsquo;black box&rsquo;. We generally want to find out specific properties of this function. We do this by asking questions to the oracle (<b>querying</b>). The query complexity is then defined as the minimum number of queries in order to find these properties.
 </p>
@@ -323,9 +323,9 @@ To get familiar with the use of oracles we will now consider the Deutsch-Josza p
 </p>
 </div>
 
-<div id="outline-container-orga476233" class="outline-3">
-<h3 id="orga476233">Deutsch-Jozsa Problem</h3>
-<div class="outline-text-3" id="text-orga476233">
+<div id="outline-container-org4827aea" class="outline-3">
+<h3 id="org4827aea">Deutsch-Jozsa Problem</h3>
+<div class="outline-text-3" id="text-org4827aea">
 <p>
 We are given a hidden Boolean function \(f\), which takes as input a string of bits, and returns either \(0\) or \(1\), that is:
 </p>
@@ -385,7 +385,7 @@ dj_circuit.draw('mpl') # draw the circuit
 </div>
 
 
-<figure id="org285a59e">
+<figure id="org973515b">
 <img src="./.ob-jupyter/9abc8a482b13d1e1fe9968d1867047a160ec5182.png" alt="9abc8a482b13d1e1fe9968d1867047a160ec5182.png">
 
 </figure>
@@ -416,13 +416,13 @@ answer = results.get_counts()
 </div>
 
 
-<figure id="orgd02f0a0">
+<figure id="org1fd815a">
 <img src="./.ob-jupyter/028f426ce0e9e8a9a25dad3c3bcf794a0a62768b.png" alt="028f426ce0e9e8a9a25dad3c3bcf794a0a62768b.png">
 
 </figure>
 
 
-<figure id="org2b1127d">
+<figure id="orgd07d39e">
 <img src="./.ob-jupyter/028f426ce0e9e8a9a25dad3c3bcf794a0a62768b.png" alt="028f426ce0e9e8a9a25dad3c3bcf794a0a62768b.png">
 
 </figure>
@@ -439,9 +439,9 @@ max_nr_inputs = 9 # 2^4 + 1
 </div>
 </div>
 
-<div id="outline-container-orgd2fa436" class="outline-3">
-<h3 id="orgd2fa436">Quantum Solution to the Deutsch-Josza Problem</h3>
-<div class="outline-text-3" id="text-orgd2fa436">
+<div id="outline-container-org64c6c4b" class="outline-3">
+<h3 id="org64c6c4b">Quantum Solution to the Deutsch-Josza Problem</h3>
+<div class="outline-text-3" id="text-org64c6c4b">
 <p>
 Using a quantum computer, we can find out if the oracle is constant or balanced with 100% confidence after only one call to the function \(f(x)\), provided we have the function \(f\) implemented as a quantum oracle, which maps the state $&vert; x&rang; &vert; y&rang; $ to $ &vert; x&rang; &vert; y &oplus; f(x)&rang;$, where \(\oplus\) is addition modulo \(2\). Below we will walk through the algorithm.
 </p>
@@ -465,7 +465,7 @@ dj_circuit.draw('mpl')
 </div>
 
 
-<figure id="orge557e19">
+<figure id="orgdc607c5">
 <img src="./.ob-jupyter/d008d29c789e516243311b2b55f25ebe94518bd0.png" alt="d008d29c789e516243311b2b55f25ebe94518bd0.png">
 
 </figure>
@@ -498,7 +498,7 @@ dj_circuit.draw('mpl')
 </div>
 
 
-<figure id="org36d3dfe">
+<figure id="orgd0472dd">
 <img src="./.ob-jupyter/ca3b3c3f4ab5299bba6848f1047084b5946a3a77.png" alt="ca3b3c3f4ab5299bba6848f1047084b5946a3a77.png">
 
 </figure>
@@ -525,7 +525,7 @@ dj_circuit.draw('mpl')
 </div>
 
 
-<figure id="orgcc59c93">
+<figure id="org42dcc26">
 <img src="./.ob-jupyter/c6e477e5e49c318ca753cf7cbc4af82fedf7b20b.png" alt="c6e477e5e49c318ca753cf7cbc4af82fedf7b20b.png">
 
 </figure>
@@ -551,7 +551,7 @@ dj_circuit.draw('mpl')
 </div>
 
 
-<figure id="orga30a20c">
+<figure id="org95e0158">
 <img src="./.ob-jupyter/b6b517368465848ffa7a4d07db5a2570b614219b.png" alt="b6b517368465848ffa7a4d07db5a2570b614219b.png">
 
 </figure>
@@ -601,7 +601,7 @@ answer = results.get_counts()
 </div>
 
 
-<figure id="orge7b589d">
+<figure id="org826cef1">
 <img src="./.ob-jupyter/f2c2fe2cbfaca86c7f6f12759abb30234f419e95.png" alt="f2c2fe2cbfaca86c7f6f12759abb30234f419e95.png">
 
 </figure>

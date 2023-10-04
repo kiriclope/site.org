@@ -14,8 +14,8 @@
   <link>http://alexm.codes/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Fri, 22 Sep 2023 14:26:28 +0000</pubDate>
-  <lastBuildDate>Fri, 22 Sep 2023 14:26:28 +0000</lastBuildDate>
+  <pubDate>Wed, 04 Oct 2023 16:09:04 +0000</pubDate>
+  <lastBuildDate>Wed, 04 Oct 2023 16:09:04 +0000</lastBuildDate>
   <generator>Emacs 27.2 Org-mode 9.4.4</generator>
   <webMaster>mahrachalexandre@gmail.com (Alexandre Mahrach)</webMaster>
   <image>
@@ -25,6 +25,15 @@
   </image>
 
 
+  <item>
+    <title>Dockerize your Python app</title>
+    <link>http://alexm.codes/posts/14_09_23_docker/index.html</link>
+    <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
+    <guid isPermaLink="false">http://alexm.codes/posts/14_09_23_docker/index.html</guid>
+    <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
   <item>
     <title>Quantum Neural Nets</title>
     <link>http://alexm.codes/posts/19_09_23_QNN/index.html</link>
@@ -48,7 +57,7 @@
     <link>http://alexm.codes/posts/qiskit_lab_1/index.html</link>
     <author>mahrachalexandre@gmail.com (Alexandre Mahrach)</author>
     <guid isPermaLink="false">http://alexm.codes/posts/qiskit_lab_1/index.html</guid>
-    <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+    <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
 
     <description><![CDATA[]]></description>
   </item>
