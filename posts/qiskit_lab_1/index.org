@@ -38,9 +38,7 @@ By default, states in qiskit start in $|0\rangle$, which corresponds to "arrow u
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/0a354ed8ae7b7a4718420759c96092bcfb7d43a9.png]]
-:END:
 
 *** 2.) Next, we would like to create superposition. The goal is to reach the state $|+\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle + |1\rangle\right)$. 
 
@@ -52,9 +50,7 @@ By default, states in qiskit start in $|0\rangle$, which corresponds to "arrow u
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/1e72693ded722b88f666b81e8152f8aefe15f330.png]]
-:END:
 
 *** 3.) Let's combine those two. The goal is to reach the state $|-\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - |1\rangle\right)$. 
 
@@ -67,9 +63,7 @@ By default, states in qiskit start in $|0\rangle$, which corresponds to "arrow u
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/52421ba72088ea5e243f54719401e1a2a4208f72.png]]
-:END:
 
 *** 4.) Finally, we move on to the complex numbers. The goal is to reach the state $|- i\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle - i|1\rangle\right)$.
 
@@ -84,9 +78,7 @@ By default, states in qiskit start in $|0\rangle$, which corresponds to "arrow u
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/f88ec8ef08e8656cd717237a90c20c3f87855635.png]]
-:END:
 
 ** Quantum Circuits Using Multi-Qubit Gates
 Great job! Now that you've understood the single-qubit gates, let us look at gates on multiple qubits. Check out this chapter if you would like to refresh the theory: https://qiskit.org/textbook/ch-gates/introduction.html.
@@ -111,9 +103,7 @@ We start with an easy gate on two qubits, the controlled-NOT (also CNOT) gate . 
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/d8ad5f1ec8dde9080eb4a1d55a28cd4b96890b35.png]]
-:END:
 
 Let us now also add a measurement to the above circuit so that we can execute it (using the simulator) and plot the histogram of the corresponding counts.
 
@@ -125,9 +115,7 @@ plot_histogram(counts) # let us plot a histogram to see the possible out
 #+end_src
 
 #+RESULTS:
-:RESULTS:
-[[file:./.ob-jupyter/6226a4d3a5b5d0d3f0922e906395148b7c703acd.png]]
-:END:
+[[file:./.ob-jupyter/a92d2cc9d3b2cae377dedd95d1e569939a2cca46.png]]
 
 As you can see in the histogram, the only possible outputs are "01" and "10", so the states of the two qubits are always perfectly anti-correlated.
 
@@ -146,9 +134,7 @@ Hint: the following circuit constructs the GHZ state, $|GHZ\rangle = \frac{1}{\s
 #+end_src
 
 #+RESULTS:
-:RESULTS:
 [[file:./.ob-jupyter/5da0cc4bb5f75ee0974b4d79ea629d0bd2fce133.png]]
-:END:
 
 #+begin_src ipython
 qc.measure_all() # we measure all the qubits
@@ -158,9 +144,7 @@ plot_histogram(counts) # let us plot a histogram to see the
 #+end_src
 
 #+RESULTS:
-:RESULTS:
-[[file:./.ob-jupyter/ee6627bf3a28adfe19cb11dff0840724d8ed8715.png]]
-:END:
+[[file:./.ob-jupyter/08d41ff0551357a8215b3ea02c14d04384a5c400.png]]
 
 Congratulations for finishing these introductory exercises! Hopefully, they got you more familiar with the Bloch sphere and basic quantum gates. Let us now apply this knowledge to the second part, where we construct our first quantum algorithm, the Deutsch-Jozsa algorithm.
 

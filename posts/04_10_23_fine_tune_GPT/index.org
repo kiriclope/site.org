@@ -1,0 +1,299 @@
+#+Title: Fine-tuning GPT with openai API
+#+DATE: <04-10-23 Wed>
+
+* Fine tuning GPT-3.5 with openai API
+
+Here we are going to see how to fine-tune GPT-3.5 using the openai api.
+We will tune GPT-3.5-turbo to learn the content the metadata of a librairy of academic papers.
+
+** Data formating
+*** Create json from xml
+The original data comes from mendeley in xml format.
+We need to convert it into a jsonl file.
+
+#+begin_src ipython
+  import xml.etree.ElementTree as ET
+  import json
+
+  def xml_to_jsonl(file_path):
+    # Parse XML file
+    tree = ET.parse(file_path + '.xml')
+    root = tree.getroot()
+
+    # Open the output file and begin writing
+    with open(file_path + '.jsonl', 'w') as f:
+        # loop over each 'record' in 'records' in XML
+        for record in root.find('records').findall('record'):
+            # strip() is used to remove leading and trailing whitespace (like \n)
+            authors = [author.text.strip() for author in record.findall('contributors/authors/author')]
+            title = record.find('titles/title').text.strip() if record.find('titles/title') is not None else 'NA'
+            year = record.find('dates/year').text.strip() if record.find('dates/year') is not None else 'NA'
+            abstract = record.find('abstract').text.strip() if record.find('abstract') is not None else 'NA'
+            journal = record.find('periodical/full-title').text.strip() if record.find('periodical/full-title') is not None else 'NA'
+
+            # create the 'reference' field
+            if authors:
+                if len(authors) == 1:
+                    reference = f"{authors[0]}, {year}"
+                elif len(authors) == 2:
+                    reference = f"{authors[0]} & {authors[1]}, {year}"
+                else:
+                    reference = f"{authors[0]} et al., {year}"
+            else:
+                reference = 'NA'
+
+            record_data = {
+                "authors": authors,
+                "title": title,
+                "year": year,
+                "abstract": abstract,
+                "journal": journal,
+                "reference": reference  # add the 'reference' field here
+            }
+
+            # Each record_data is now written to a new line in the output file
+            f.write(json.dumps(record_data) + '\n')
+
+    print(file_path + '.xml has been successfully converted into .jsonl')
+#+end_src
+
+#+RESULTS:
+
+Let's call the function
+#+begin_src ipython
+  path = "/home/leon/Projects/NeuroBot/data/"
+  file_name = "compte_lab"
+  file_path = path + file_name
+
+  xml_to_jsonl(file_path)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+/home/leon/Projects/NeuroBot/data/compte_lab.xml has been successfully converted into .jsonl
+:END:
+
+*** Data Splitting
+
+We need to split the data to check the model performance on unseen data.
+
+#+begin_src ipython
+  from sklearn.model_selection import train_test_split
+
+  train_size = 0.8 
+  test_size = 0.5 
+  
+  with open(file_path + '.jsonl', 'r') as f:
+      data = [json.loads(line) for line in f]
+
+  # # Split data into training and the remaining
+  train_data, remaining = train_test_split(data, train_size=train_size, shuffle=True, random_state=1)
+
+  # # Split remaining data into validation and test data
+  validation_data, test_data = train_test_split(remaining, train_size=test_size, shuffle=True, random_state=1)
+
+  # Write training data to JSON Lines file
+  with open(file_path + '_train.jsonl', 'w') as f:
+      for item in train_data:
+          f.write(json.dumps(item) + "\n")
+
+  # Write validation data to JSON Lines file
+  with open(file_path + '_validation.jsonl', 'w') as f:
+      for item in validation_data:
+          f.write(json.dumps(item) + "\n")
+
+  # Write test data to JSON Lines file
+  with open(file_path + '_test.jsonl', 'w') as f:
+      for item in test_data:
+          f.write(json.dumps(item) + "\n")
+
+#+end_src
+
+#+RESULTS:
+
+** Creating a conversational chat
+
+A essential element of fine-tuning a model is to define a proper conversation on which to train GPT
+Here, we will ask gpt to try to infer the key points of a given paper based on its abstract.
+
+First, we provide GPT with the metadata of a given article based on its reference (Author et al, year).
+Then we ask him to infer the main topics/findings of the article.
+
+For that we will use the following jsonl conversation message:
+#+begin_example
+[
+{"role": "system", "content": "You are a helpful assistant."},
+{"role": "user", "content": f'Give me a brief overview of "{title}".'},
+{"role": "assistant", "content": f'Title: "{title}". Authors: {authors}. Published in: {journal} on {year}. Abstract: {abstract}'},
+{"role": "user", "content": f'Based on its abstract, what is the main topic of "{title}"?'},
+{"role": "assistant", "content": f'The main topic of "{title}" is ...'}, 
+{"role": "user", "content": f'What are the key findings as per the abstract of "{title}"?'},
+{"role": "assistant", "content": f'The key findings of "{title}" are ...'},  
+{"role": "user", "content": f'What methodology is described in the abstract of "{title}"?'},
+{"role": "assistant", "content": f'The methodology described in "{title}" is ...'}, 
+]
+#+end_example
+
+Now let's write a function that creates the chat:
+#+begin_src ipython
+def create_chat_format(file_name):
+    with open(file_name, 'r') as f:
+        data = [json.loads(line) for line in f]
+
+    chat_format_data = []
+
+    for item in data:
+        authors = ", ".join(item['authors'])
+        title = item['title']
+        year = item['year']
+        abstract = item['abstract']
+        journal = item['journal']
+        reference = item['reference']
+        
+        conversation = {
+            'messages': [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": f'Give me a brief overview of "{reference}".'},
+                {"role": "assistant", "content": f'Reference: "{reference}". Authors: {authors}. Published in: {journal} on {year}. Abstract: {abstract}'},
+                {"role": "user", "content": f'Based on its abstract, what is the main topic of "{reference}"?'},
+                {"role": "assistant", "content": f'The main topic of "{reference}" is ...'}, 
+                {"role": "user", "content": f'What are the key findings as per the abstract of "{reference}"?'},
+                {"role": "assistant", "content": f'The key findings of "{reference}" are ...'},  
+                {"role": "user", "content": f'What methodology is described in the abstract of "{reference}"?'},
+                {"role": "assistant", "content": f'The methodology described in "{reference}" is ...'}, 
+            ]
+        }
+        
+        chat_format_data.append(conversation)
+        
+    return chat_format_data
+#+end_src
+
+#+RESULTS:
+
+We finally write the chat back to a jsonl file.
+
+#+begin_src ipython
+  def write_chat_format_file(data, output_file):
+      with open(output_file, 'w') as f:
+          for conversation in data:
+              f.write(json.dumps(conversation) + "\n")
+#+end_src
+
+#+RESULTS:
+
+Altogether:
+
+#+begin_src ipython
+  # Convert and save data
+  chat_format_data = create_chat_format(file_path + '_train.jsonl')
+  # file_path + '_chat.jsonl' is your new file which can be used for training the model
+  write_chat_format_file(chat_format_data, file_path + '_chat.jsonl')
+#+end_src
+
+#+RESULTS:
+
+*** Upload the training data
+
+Now, we need to upload our chat formated training data to the openai servers:
+
+#+begin_src ipython
+  import os
+  import openai
+  openai.api_key = os.getenv("OPENAI_API_KEY")
+  openai_file = openai.File.create(file=open(file_path + "_chat.jsonl", "rb"), purpose='fine-tune')
+#+end_src
+
+#+RESULTS:
+
+We will then tune a model using the file id:
+
+#+begin_src ipython
+print(openai_file.id)
+#+end_src
+
+** Fine-tuning GPT
+*** Creating a job
+
+In this example, we will fine-tune gpt-3.5-turbo (but we could have used babbage-002, davinci-002, or an existing fine-tuned model)
+by providing the file ID that was returned when the training data was uploaded to the OpenAI API.
+Note: you can customize your fine-tuned model's name using the suffix parameter.
+
+#+begin_src ipython
+  openai.FineTuningJob.create(training_file=openai_file.id, model="gpt-3.5-turbo")
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+
+*** Checking a job's status
+
+We can check the job status with
+#+begin_src ipython
+  my_jobs = openai.FineTuningJob.list(limit=1)
+  my_job_id = my_jobs.data[0].id
+  print(my_jobs.data[0].status)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+running
+:END:
+
+*** Asking other queries
+
+#+begin_src ipython
+# List 10 fine-tuning jobs
+openai.FineTuningJob.list(limit=10)
+
+# Retrieve the state of a fine-tune
+openai.FineTuningJob.retrieve(my_job_id)
+
+# Cancel a job
+openai.FineTuningJob.cancel(my_job_id)
+
+# List up to 10 events from a fine-tuning job
+openai.FineTuningJob.list_events(id=my_job_id, limit=10)
+
+# Delete a fine-tuned model (must be an owner of the org the model was created in)
+openai.Model.delete("ft:gpt-3.5-turbo:acemeco:suffix:abc123")
+#+end_src
+
+** Using our fine-tuned model
+
+We can use our fine-tune model from the openai website or from the api like this:
+
+#+begin_src ipython
+  completion = openai.ChatCompletion.create(
+      model="ft:gpt-3.5-turbo-0613:personal::85siq2GE",
+      messages=[
+          {"role": "system", "content": "You are a helpful assistant."},
+          {"role": "user", "content": "Based on the study from Barraclough D, Conroy M, Lee D, Nature Neuroscience 2018? Can you propose a follow up project?"}
+      ]
+  )
+  print(completion.choices[0].message)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+{
+  "role": "assistant",
+  "content": "One potential follow-up project could be to explore whether the same neural mechanisms are involved in the perception of moral and non-moral decisions. Specifically, the Barraclough study focused on animal observers that were trained to pick one of two length-matched target stimuli associated with different magnitudes of reward. It would be interesting to investigate whether the results would generalize to situations involving moral decision-making, such as when deciding between two choices that differ in their ethical implications or societal consequences. This could shed light on the extent to which the neural mechanisms underlying value-based decision-making are domain-specific or domain-general."
+}
+:END:
+
+Facing ChatGPT or even GPT4 with the same prompts, one sees how helpful fine-tuning can be.
+
+GPT4
+#+begin_example
+As an AI assistant, I'm unable to access real-time databases or specific reference materials like Barraclough D, Conroy M, Lee D, Nature Neuroscience 2018 directly. However, based on a generic understanding of another related topic, here's an idea for a generic follow-up project:
+
+Assuming the study was about neural coding and decision making in primate cerebral cortex, a potential follow-up study could aim to understand how these decisions are affected by altering neural activity in specific cortical regions. This could use methods like optogenetics or chemogenetics to selectively manipulate neurons during decision-making tasks, helping to establish causal links between cortical activity and behavioral outcomes.
+
+Remember to always design follow-up projects based on the questions and gaps left by the previous research. These would provide more specific and accurate directions for a new project.
+#+end_example
+
+GPT3.5-turbo
+#+begin_example
+Based on the findings of the study by Barraclough, Conroy, and Lee in Nature Neuroscience 2018, a possible follow-up project could be to investigate the long-term effects of the observed neural changes.
+#+end_example
