@@ -4,7 +4,7 @@
 <!-- 25 Nov. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>&lrm;</title>
+<title>Quantum Neural Nets</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Alexandre Mahrach">
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -19,7 +19,29 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
-<link rel="stylesheet" href="../css/site.css?v=2f27430cb9e963a79f747bb25948d9a0008248fa5e8f33c85e53c9e2bbc05683" type="text/css">
+<link rel="stylesheet" href="../../css/site.css?v=2f27430cb9e963a79f747bb25948d9a0008248fa5e8f33c85e53c9e2bbc05683" type="text/css">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <header id="preamble" class="status">
@@ -57,13 +79,43 @@
 </div>
 </header>
 <main id="content">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">25 Nov 2023</span></span>  <a href="23_10_04_Fine_Tuning_GPT/index.html">Fine-tuning GPT with openai API</a></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">22 Nov 2023</span></span>  <a href="23_11_22_BARCSYN_RETREAT/index.html">Fine Tuning Large Language Models with Hugging Face</a></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">19 Sep 2023</span></span>  <a href="23_09_19_QNN/index.html">Quantum Neural Nets</a></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">14 Sep 2023</span></span>  <a href="23_09_14_Docker/index.html">Dockerize your Python app</a></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">13 Sep 2023</span></span>  <a href="23_09_01_My_First_Post/index.html">My first post</a></li>
-</ul>
+<header>
+<h1 class="title">Quantum Neural Nets</h1>
+<p class="subtitle">Sep 19, 2023</p>
+</header><p>
+#+DRAFT t
+</p>
+
+<section id="outline-container-org4da5e3c" class="outline-2">
+<h2 id="org4da5e3c">Intro</h2>
+<div class="outline-text-2" id="text-org4da5e3c">
+<p>
+Qiskit provides different methods to compute gradients of expectation values, let&rsquo;s explore them!
+</p>
+
+<p>
+The parameterized ansatz state is \(|\Psi(\vec\theta)\rangle = U(\vec\theta)|0\rangle\) where \(U(\vec\theta)\) is given be the following circuit
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">from qiskit.circuit.library import RealAmplitudes
+
+ansatz = RealAmplitudes(num_qubits=2, reps=1, entanglement='linear').decompose()
+ansatz.draw('mpl', style='iqx')
+</pre>
+</div>
+
+
+<figure id="orgc11d3bf">
+<img src="./.ob-jupyter/6eb63ca95e3e6d6630c7de1f6e3e246434bd9560.png" alt="6eb63ca95e3e6d6630c7de1f6e3e246434bd9560.png">
+
+</figure>
+</div>
+</section>
+
+<section id="outline-container-orga7c2249" class="outline-2">
+<h2 id="orga7c2249"></h2>
+</section>
 </main>
 <footer id="postamble" class="status">
 <p>Last updated 25 Nov. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>

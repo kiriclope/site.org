@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&family=Saira+Semi+Condensed:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Nunito:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
 
+.news-section {
+    margin-bottom: 2em;
+}
+
+.news-section h2 {
+    font-size: 1.5em;
+}
+
+.news-section .news-date {
+    font-weight: bold;
+}
+
 .fa-brands {
     color: #383838;
 }
@@ -68,7 +80,7 @@ h3 h4 h5 h6 {
 /* readable*/
 body {
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 60em;
   font-family: "JetBrains", "Helvetica", "Arial", sans-serif;
   font-size: 18px;
   line-height: 1.5;
@@ -89,8 +101,8 @@ header#preamble {
 
 header#preamble .logo{
     display: flex;
-	  align-items: start;
-	  flex-wrap: wrap;
+	align-items: start;
+	flex-wrap: wrap;
     margin-bottom: 0;
 }
 

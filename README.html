@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 04 Oct. 2023 -->
+<!-- 25 Nov. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My homepage with org-mode</title>
@@ -20,19 +20,20 @@
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
 <link rel='stylesheet' href='css/index.css?v=c18771e4d9917f7bbeba0dc8707195c42a1cf1d75f55928214254bd81d1a0c6e'/>
-<link rel="stylesheet" href="css/site.css?v=79be7c3915af85fc6b1983f9ba00965d5644c3c4763ea82d3499424d07a026a6" type="text/css">
+<link rel="stylesheet" href="css/site.css?v=2f27430cb9e963a79f747bb25948d9a0008248fa5e8f33c85e53c9e2bbc05683" type="text/css">
 </head>
 <body>
 <header id="preamble" class="status">
 <div class="logo">
   <a href="/">
-    <img src="/snippets/images/photo.png" class="avatar" alt="My photo"/>
+    <img src="/images/photo.png" class="avatar" alt="My photo"/>
   </a>
   <div class="title-section">
     <a href="/"><h1>Alexandre Mahrach</h1></a>
     <!-- <sub style="line-height:1;"> <h2>Data Scientist & Machine Learning Expert</h2> </sub> -->
     <nav>
       <ul>
+        <li><a href="/news.html"> News </a></li>
         <li><a href="/posts/posts.html"> Posts </a></li>
         <li><a href="/tutorials/tutorials.html"> Tutorials </a></li>
         <li><a href="/about.html"> About </a></li>
@@ -60,33 +61,33 @@
 <header>
 <h1 class="title">My homepage with org-mode</h1>
 </header>
-<figure id="orgf740e26">
+<figure id="org1349c79">
 <a href="https://github.com/dmacvicar/site.org/actions?query=workflow%3A%22Build+and+publish+to+pages%22"><object type="image/svg+xml" data="https://github.com/dmacvicar/site.org/workflows/Build%20and%20publish%20to%20pages/badge.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object></a>
 
 </figure>
 
-<section id="outline-container-orgcbd218e" class="outline-2">
-<h2 id="orgcbd218e">Introduction</h2>
-<div class="outline-text-2" id="text-orgcbd218e">
+<section id="outline-container-org63e25a6" class="outline-2">
+<h2 id="org63e25a6">Introduction</h2>
+<div class="outline-text-2" id="text-org63e25a6">
 <p>
 This setup based on <a href="https://orgmode.org">org-mode</a> aims to replace my previous <a href="https://jekyllrb.com">Jekyll</a> setup used to publish my site.
 </p>
 </div>
 </section>
 
-<section id="outline-container-orgfbc309d" class="outline-2">
-<h2 id="orgfbc309d">Implementation</h2>
-<div class="outline-text-2" id="text-orgfbc309d">
+<section id="outline-container-orgcc6d017" class="outline-2">
+<h2 id="orgcc6d017">Implementation</h2>
+<div class="outline-text-2" id="text-orgcc6d017">
 <p>
 For details about the implementation see <a href="posts/2019-09-03-migrating-from-jekyll-to-org/index.html">the introductory post</a> and the <a href="https://github.com/dmacvicar/site.org"><i aria-hidden='true' class='fa fa-github'></i> Source</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org9b24e5d" class="outline-2">
-<h2 id="org9b24e5d">Usage</h2>
-<div class="outline-text-2" id="text-org9b24e5d">
+<section id="outline-container-orgfa15eaa" class="outline-2">
+<h2 id="orgfa15eaa">Usage</h2>
+<div class="outline-text-2" id="text-orgfa15eaa">
 <ul class="org-ul">
 <li>Posts go into <code>posts/</code>
 Preferably in their own subdirectory together with all their assets (self-contained)</li>
@@ -97,7 +98,7 @@ Preferably in their own subdirectory together with all their assets (self-contai
 To generate:
 </p>
 
-<pre class="example" id="orgc276903">
+<pre class="example" id="org83c7330">
 $ make
 </pre>
 
@@ -106,9 +107,9 @@ The output site will be rendered in <code>public/</code>.
 </p>
 </div>
 
-<div id="outline-container-org8f67e60" class="outline-3">
-<h3 id="org8f67e60">RSS Feeds</h3>
-<div class="outline-text-3" id="text-org8f67e60">
+<div id="outline-container-orga9772f9" class="outline-3">
+<h3 id="orga9772f9">RSS Feeds</h3>
+<div class="outline-text-3" id="text-orga9772f9">
 <p>
 I am documenting this part because it is complicated and I tend to forget how it works everytime something breaks.
 </p>
@@ -165,13 +166,13 @@ The <span class="underline">RSS</span> exporter will then use the property for t
 </div>
 </section>
 
-<section id="outline-container-org0549727" class="outline-2">
-<h2 id="org0549727">Features</h2>
-<div class="outline-text-2" id="text-org0549727">
+<section id="outline-container-org6888afb" class="outline-2">
+<h2 id="org6888afb">Features</h2>
+<div class="outline-text-2" id="text-org6888afb">
 </div>
-<div id="outline-container-org1bf8b05" class="outline-4">
-<h4 id="org1bf8b05">Redirection</h4>
-<div class="outline-text-4" id="text-org1bf8b05">
+<div id="outline-container-org13f047a" class="outline-4">
+<h4 id="org13f047a">Redirection</h4>
+<div class="outline-text-4" id="text-org13f047a">
 <p>
 When the site was generated using Jekyll, posts where generated in the <code>/:year/:month/:day/:id.html</code> route.
 In order to generate a redirect page, use the following keyword to generate a redirect page:
@@ -184,9 +185,9 @@ In order to generate a redirect page, use the following keyword to generate a re
 </div>
 </div>
 
-<div id="outline-container-org76211cc" class="outline-3">
-<h3 id="org76211cc">Drafts</h3>
-<div class="outline-text-3" id="text-org76211cc">
+<div id="outline-container-org275aa3c" class="outline-3">
+<h3 id="org275aa3c">Drafts</h3>
+<div class="outline-text-3" id="text-org275aa3c">
 <p>
 To hide a post from the list of recent posts or the full archive, use:
 </p>
@@ -203,9 +204,9 @@ Note that the post will still be published, but you will need to access it by it
 </div>
 </section>
 
-<section id="outline-container-org8f44953" class="outline-2">
-<h2 id="org8f44953">License</h2>
-<div class="outline-text-2" id="text-org8f44953">
+<section id="outline-container-orgcdbd410" class="outline-2">
+<h2 id="orgcdbd410">License</h2>
+<div class="outline-text-2" id="text-orgcdbd410">
 <p>
 The code used for generating the site is licensed under the <a href="LICENSE">MIT</a> license.
 </p>
@@ -217,18 +218,7 @@ The content of the site, Copyright (©) 2014-2019 Duncan Mac-Vicar P..
 </section>
 </main>
 <footer id="postamble" class="status">
-<footer id="footer">
-  <div class="footer-left">MIT Licensed © 2023 Alexandre Mahrach</div>
-  <!-- <div class="footer-right"> -->
-  <!--   <nav> -->
-  <!--     <ul> -->
-  <!--       <li><a href="/posts/posts.html"> Posts </a></li> -->
-  <!--       <li><a href="/tutorials/tutorials.html"> Tutorials </a></li> -->
-  <!--       <li><a href="/"> About </a></li> -->
-  <!--     </ul> -->
-  <!--   </nav> -->
-  <!-- </div> -->
-</footer>
+<p>Last updated 25 Nov. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>
