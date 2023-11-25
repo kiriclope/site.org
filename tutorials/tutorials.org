@@ -1,0 +1,2 @@
+- <2023-09-16 sam.>  [[file:rss.org][Blog]]
+- <2023-09-14 jeu.>  [[file:Qiskit/index.org][Introduction to Quantum Computing]]

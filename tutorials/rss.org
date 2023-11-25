@@ -1,0 +1,8 @@
+#+TITLE: Blog
+
+* [[file:tutorials.org][Sitemap for project tutorials]]
+:PROPERTIES:
+:RSS_PERMALINK: posts/tutorials.html
+:RSS_TITLE: Sitemap for project tutorials
+:PUBDATE:  <2023-09-16 sam.>
+:END:
