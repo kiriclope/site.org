@@ -1,0 +1,7 @@
+#+TITLE: News
+
+[[file:./files/cuny.png]]
+
+- <2023-11-15 Fri> Invited to *NYC* to talk about [[file:04_10_23_fine_tune_GPT/index.org][Attractor Dynamics]] at /*CUNY*'s  Physics of Life Symposium/.
+- <2023-11-22 Thu> Talked about [[file:./files/llm.html][Fine Tuning Large Language Models]] at /*BARCSYN*  Fall Retreat/ 23.
+- <2023-02-22 Thur> Gave an [[file:./files/non_comp_neuro.html][Introduction to Quantum Computing]] at /*BARCSYN* Spring Retreat 23/.

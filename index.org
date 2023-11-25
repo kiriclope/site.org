@@ -2,28 +2,29 @@
 
 #+ATTR_HTML: :class summary
 #+BEGIN_export html
-Machine Learning & Quantum Enthusiast. Skilled in handling quarks and queries.
+Machine Learning & Quantum Computing Enthusiast. Skilled in handling quarks and queries.
 #+END_export
 
-* Posts
+* \faCode News
+  :PROPERTIES:
+  :HTML_CONTAINER_CLASS: post-list
+  :END:
+
+#+INCLUDE: ./news.org
+
+* \faBookmark Latest Posts
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:
 
 #+INCLUDE: posts/posts.org
 
-Full list [[file:./posts/archive.org][here.]]
+Full list at [[file:./posts/archive.org][my Blog.]]
 
 -----
 
-# * \faCode Projects/Code
-#   :PROPERTIES:
-#   :HTML_CONTAINER_CLASS: post-list
-#   :END:
 
-# # - <2016-02-27 Sat> an attempt to write a [[https://github.com/dmacvicar/terraform-provider-libvirt][libvirt provider]] for [[https://terraform.io][Terraform]]
-
-* Tutorials
+* \faGraduationCap Tutorials
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:

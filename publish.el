@@ -279,7 +279,7 @@
          :base-extension "org"
          :publishing-directory "./public"
          :publishing-function 'duncan/org-rss-publish-to-rss
-         :html-link-home "http://alexm.codes/"
+         :html-link-home "http://mac-vicar.eu/"
          :html-link-use-abs-url t)
    (list "site"
          :base-directory "./"
@@ -302,40 +302,13 @@
          :publishing-directory "./public/tutorials"
          :publishing-function 'org-html-publish-to-html
          :section-numbers nil
-         :with-toc t
-         :auto-sitemap t
-         :sitemap-style 'list
-         :sitemap-filename "tutorials.org"
-         :sitemap-function 'duncan/latest-posts-sitemap-function
-         :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
-   ;; (list "tutorials"
-   ;;       :base-directory "./public/tutorials"
-   ;;       :exclude (regexp-opt '("tutorials.org"))
-   ;;       :base-extension "org"
-   ;;       :recursive t
-   ;;       :publishing-directory (expand-file-name "public/tutorials" (projectile-project-root))
-   ;;       :publishing-function 'duncan/org-html-publish-to-html
-   ;;       :section-numbers nil
-   ;;       :with-toc nil
-   ;;       :html-preamble t
-   ;;       :html-preamble-format (duncan--pre/postamble-format 'preamble)
-   ;;       :html-postamble t
-   ;;       :html-postamble-format (duncan--pre/postamble-format 'postamble)
-   ;;       :html-head-include-scripts nil
-   ;;       :html-head-include-default-style nil
-   ;;       :auto-sitemap t
-   ;;       :sitemap-filename "tutorials.org"
-   ;;       :sitemap-style 'list
-   ;;       :sitemap-title nil
-   ;;       :sitemap-sort-files 'anti-chronologically
-   ;;       :sitemap-function 'duncan/latest-posts-sitemap-function
-   ;;       :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
+         :with-toc t)
    (list "assets"
          :base-directory "./"
          :exclude (regexp-opt '("assets" "public"))
          :include '("CNAME" "keybase.txt" "LICENSE" ".nojekyll" "publish.el" ".well-known/nostr.json")
          :recursive t
-         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf"))
+         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css"))
          :publishing-directory "./public"
          :publishing-function 'org-publish-attachment)))
 
