@@ -1,6 +1,6 @@
 #+TITLE: Quantum Neural Nets
 #+DATE: <2023-09-19 Tue>
-#+DRAFT t
+#+DRAFT: t
 #+PROPERTY: header-args:ipython :results both :exports both :async yes :session py kernel: quantum
 
 * Intro 
