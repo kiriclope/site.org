@@ -240,6 +240,7 @@
          :sitemap-sort-files 'anti-chronologically
          :sitemap-function 'duncan/latest-posts-sitemap-function
          :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
+
    (list "archive"
          :base-directory "./posts"
          :recursive t
@@ -247,7 +248,7 @@
          :base-extension "org"
          :publishing-directory "./public"
          :publishing-function 'ignore
-         ;;:publishing-function 'duncan/org-rss-publish-to-rss
+         :publishing-function 'duncan/org-rss-publish-to-rss
          :html-link-home "http://alexm.codes/"
          :html-link-use-abs-url t
          :auto-sitemap t
@@ -256,6 +257,7 @@
          :sitemap-sort-files 'anti-chronologically
          :sitemap-function 'duncan/archive-sitemap-function
          :sitemap-format-entry 'duncan/archive-sitemap-format-entry)
+   
    ;; Generate a org sitemap to use later for rss, ignoring publishing the site again
    (list "sitemap-for-rss"
          :base-directory "./posts"
@@ -279,7 +281,7 @@
          :base-extension "org"
          :publishing-directory "./public"
          :publishing-function 'duncan/org-rss-publish-to-rss
-         :html-link-home "http://mac-vicar.eu/"
+         :html-link-home "http://alexm.codes"
          :html-link-use-abs-url t)
    (list "site"
          :base-directory "./"

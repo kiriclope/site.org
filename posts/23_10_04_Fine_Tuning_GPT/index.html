@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 25 Nov. 2023 -->
+<!-- 18 Dec. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fine-tuning GPT with openai API</title>
@@ -33,7 +33,7 @@
     <nav>
       <ul>
         <li><a href="/news.html"> News </a></li>
-        <li><a href="/posts/posts.html"> Posts </a></li>
+        <li><a href="/posts/archive.html"> Posts </a></li>
         <li><a href="/tutorials/tutorials.html"> Tutorials </a></li>
         <li><a href="/about.html"> About </a></li>
         <!-- add more as needed -->
@@ -59,11 +59,11 @@
 <main id="content">
 <header>
 <h1 class="title">Fine-tuning GPT with openai API</h1>
-<p class="subtitle">Nov 25, 2023</p>
+<p class="subtitle">Dec 18, 2023</p>
 </header>
-<section id="outline-container-orgf4d1d4c" class="outline-2">
-<h2 id="orgf4d1d4c">Fine tuning GPT-3.5 with openai API</h2>
-<div class="outline-text-2" id="text-orgf4d1d4c">
+<section id="outline-container-org4bd3509" class="outline-2">
+<h2 id="org4bd3509">Fine tuning GPT-3.5 with openai API</h2>
+<div class="outline-text-2" id="text-org4bd3509">
 <p>
 Here we are going to see how to fine-tune GPT-3.5 using the openai api.  We will
 tune GPT-3.5-turbo to learn the content the metadata of a librairy of academic
@@ -71,13 +71,13 @@ papers.
 </p>
 </div>
 
-<div id="outline-container-org4664c62" class="outline-3">
-<h3 id="org4664c62">Data formating</h3>
-<div class="outline-text-3" id="text-org4664c62">
+<div id="outline-container-orgc9cd517" class="outline-3">
+<h3 id="orgc9cd517">Data formating</h3>
+<div class="outline-text-3" id="text-orgc9cd517">
 </div>
-<div id="outline-container-orgd465a15" class="outline-4">
-<h4 id="orgd465a15">Create json from xml</h4>
-<div class="outline-text-4" id="text-orgd465a15">
+<div id="outline-container-org6f4ecfd" class="outline-4">
+<h4 id="org6f4ecfd">Create json from xml</h4>
+<div class="outline-text-4" id="text-org6f4ecfd">
 <p>
 The original data comes from mendeley in xml format.  We need to convert it into
 a jsonl file.
@@ -144,9 +144,9 @@ xml_to_jsonl(file_path)
 </div>
 </div>
 
-<div id="outline-container-org0d63fe4" class="outline-4">
-<h4 id="org0d63fe4">Data Splitting</h4>
-<div class="outline-text-4" id="text-org0d63fe4">
+<div id="outline-container-orgd50da24" class="outline-4">
+<h4 id="orgd50da24">Data Splitting</h4>
+<div class="outline-text-4" id="text-orgd50da24">
 <p>
 We need to split the data to check the model performance on unseen data.
 </p>
@@ -187,9 +187,9 @@ with open(file_path + '_test.jsonl', 'w') as f:
 </div>
 </div>
 
-<div id="outline-container-org4b6d49a" class="outline-3">
-<h3 id="org4b6d49a">Creating a conversational chat</h3>
-<div class="outline-text-3" id="text-org4b6d49a">
+<div id="outline-container-org1679b55" class="outline-3">
+<h3 id="org1679b55">Creating a conversational chat</h3>
+<div class="outline-text-3" id="text-org1679b55">
 <p>
 A essential element of fine-tuning a model is to define a proper conversation on which to train GPT
 Here, we will ask gpt to try to infer the key points of a given paper based on its abstract.
@@ -203,7 +203,7 @@ Then we ask him to infer the main topics/findings of the article.
 <p>
 For that we will use the following jsonl conversation message:
 </p>
-<pre class="example" id="orgdc8156e">
+<pre class="example" id="orgb6aa368">
 [
 {"role": "system", "content": "You are a helpful assistant."},
 {"role": "user", "content": f'Give me a brief overview of "{title}".'},
@@ -280,9 +280,9 @@ write_chat_format_file(chat_format_data, file_path + '_chat.jsonl')
 </div>
 </div>
 
-<div id="outline-container-org0af3ebc" class="outline-4">
-<h4 id="org0af3ebc">Upload the training data</h4>
-<div class="outline-text-4" id="text-org0af3ebc">
+<div id="outline-container-org2efb7d2" class="outline-4">
+<h4 id="org2efb7d2">Upload the training data</h4>
+<div class="outline-text-4" id="text-org2efb7d2">
 <p>
 Now, we need to upload our chat formated training data to the openai servers:
 </p>
@@ -307,13 +307,13 @@ We will then tune a model using the file id:
 </div>
 </div>
 
-<div id="outline-container-org1395ef7" class="outline-3">
-<h3 id="org1395ef7">Fine-tuning GPT</h3>
-<div class="outline-text-3" id="text-org1395ef7">
+<div id="outline-container-org02bccae" class="outline-3">
+<h3 id="org02bccae">Fine-tuning GPT</h3>
+<div class="outline-text-3" id="text-org02bccae">
 </div>
-<div id="outline-container-org5e87985" class="outline-4">
-<h4 id="org5e87985">Creating a job</h4>
-<div class="outline-text-4" id="text-org5e87985">
+<div id="outline-container-orgd49c6b3" class="outline-4">
+<h4 id="orgd49c6b3">Creating a job</h4>
+<div class="outline-text-4" id="text-orgd49c6b3">
 <p>
 In this example, we will fine-tune gpt-3.5-turbo (but we could have used
 babbage-002, davinci-002, or an existing fine-tuned model) by providing the file
@@ -331,9 +331,9 @@ Note: you can customize your fine-tuned model&rsquo;s name using the suffix para
 </div>
 </div>
 
-<div id="outline-container-org893ca12" class="outline-4">
-<h4 id="org893ca12">Checking a job&rsquo;s status</h4>
-<div class="outline-text-4" id="text-org893ca12">
+<div id="outline-container-orgf09853c" class="outline-4">
+<h4 id="orgf09853c">Checking a job&rsquo;s status</h4>
+<div class="outline-text-4" id="text-orgf09853c">
 <p>
 We can check the job status with
 </p>
@@ -346,9 +346,9 @@ print(my_jobs.data[0].status)
 </div>
 </div>
 
-<div id="outline-container-org5f59844" class="outline-4">
-<h4 id="org5f59844">Asking other queries</h4>
-<div class="outline-text-4" id="text-org5f59844">
+<div id="outline-container-org6c64d42" class="outline-4">
+<h4 id="org6c64d42">Asking other queries</h4>
+<div class="outline-text-4" id="text-org6c64d42">
 <div class="org-src-container">
 <pre class="src src-ipython"># List 10 fine-tuning jobs openai.FineTuningJob.list(limit=10)
 
@@ -367,9 +367,9 @@ openai.Model.delete("ft:gpt-3.5-turbo:acemeco:suffix:abc123")
 </div>
 </div>
 
-<div id="outline-container-org53bcebf" class="outline-3">
-<h3 id="org53bcebf">Using our fine-tuned model</h3>
-<div class="outline-text-3" id="text-org53bcebf">
+<div id="outline-container-org34449fe" class="outline-3">
+<h3 id="org34449fe">Using our fine-tuned model</h3>
+<div class="outline-text-3" id="text-org34449fe">
 <p>
 We can use our fine-tune model from the openai website or from the api like this:
 </p>
@@ -393,7 +393,7 @@ Facing ChatGPT or even GPT4 with the same prompts, one sees how helpful fine-tun
 <p>
 GPT4
 </p>
-<pre class="example" id="org044d7b6">
+<pre class="example" id="org2ddc5e9">
 As an AI assistant, I'm unable to access real-time databases or specific reference materials like Barraclough D, Conroy M, Lee D, Nature Neuroscience 2018 directly. However, based on a generic understanding of another related topic, here's an idea for a generic follow-up project:
 
 Assuming the study was about neural coding and decision making in primate cerebral cortex, a potential follow-up study could aim to understand how these decisions are affected by altering neural activity in specific cortical regions. This could use methods like optogenetics or chemogenetics to selectively manipulate neurons during decision-making tasks, helping to establish causal links between cortical activity and behavioral outcomes.
@@ -404,7 +404,7 @@ Remember to always design follow-up projects based on the questions and gaps lef
 <p>
 GPT3.5-turbo
 </p>
-<pre class="example" id="org7e4b9df">
+<pre class="example" id="orge6675d5">
 Based on the findings of the study by Barraclough, Conroy, and Lee in Nature Neuroscience 2018, a possible follow-up project could be to investigate the long-term effects of the observed neural changes.
 </pre>
 </div>
@@ -412,7 +412,7 @@ Based on the findings of the study by Barraclough, Conroy, and Lee in Nature Neu
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 25 Nov. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 18 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>
