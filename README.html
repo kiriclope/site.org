@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My homepage with org-mode</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="Duncan Mac-Vicar P.">
+<meta name="author" content="Alexandre Mahrach">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1687066-2"></script>
 <script>
@@ -61,33 +61,27 @@
 <header>
 <h1 class="title">My homepage with org-mode</h1>
 </header>
-<figure id="org9fe778c">
-<a href="https://github.com/dmacvicar/site.org/actions?query=workflow%3A%22Build+and+publish+to+pages%22"><object type="image/svg+xml" data="https://github.com/dmacvicar/site.org/workflows/Build%20and%20publish%20to%20pages/badge.svg" class="org-svg">
-Sorry, your browser does not support SVG.</object></a>
-
-</figure>
-
-<section id="outline-container-org66ec22d" class="outline-2">
-<h2 id="org66ec22d">Introduction</h2>
-<div class="outline-text-2" id="text-org66ec22d">
+<section id="outline-container-orgcda5bda" class="outline-2">
+<h2 id="orgcda5bda">Introduction</h2>
+<div class="outline-text-2" id="text-orgcda5bda">
 <p>
-This setup based on <a href="https://orgmode.org">org-mode</a> aims to replace my previous <a href="https://jekyllrb.com">Jekyll</a> setup used to publish my site.
+This setup based on <a href="https://orgmode.org">org-mode</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-orga78b08b" class="outline-2">
-<h2 id="orga78b08b">Implementation</h2>
-<div class="outline-text-2" id="text-orga78b08b">
+<section id="outline-container-org3c5cd6d" class="outline-2">
+<h2 id="org3c5cd6d">Implementation</h2>
+<div class="outline-text-2" id="text-org3c5cd6d">
 <p>
 For details about the implementation see <a href="posts/2019-09-03-migrating-from-jekyll-to-org/index.html">the introductory post</a> and the <a href="https://github.com/dmacvicar/site.org"><i aria-hidden='true' class='fa fa-github'></i> Source</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-orgff3bf73" class="outline-2">
-<h2 id="orgff3bf73">Usage</h2>
-<div class="outline-text-2" id="text-orgff3bf73">
+<section id="outline-container-org591a721" class="outline-2">
+<h2 id="org591a721">Usage</h2>
+<div class="outline-text-2" id="text-org591a721">
 <ul class="org-ul">
 <li>Posts go into <code>posts/</code>
 Preferably in their own subdirectory together with all their assets (self-contained)</li>
@@ -98,7 +92,7 @@ Preferably in their own subdirectory together with all their assets (self-contai
 To generate:
 </p>
 
-<pre class="example" id="org508392d">
+<pre class="example" id="orgb015ee9">
 $ make
 </pre>
 
@@ -107,9 +101,9 @@ The output site will be rendered in <code>public/</code>.
 </p>
 </div>
 
-<div id="outline-container-org22e10bb" class="outline-3">
-<h3 id="org22e10bb">RSS Feeds</h3>
-<div class="outline-text-3" id="text-org22e10bb">
+<div id="outline-container-org0489d17" class="outline-3">
+<h3 id="org0489d17">RSS Feeds</h3>
+<div class="outline-text-3" id="text-org0489d17">
 <p>
 I am documenting this part because it is complicated and I tend to forget how it works everytime something breaks.
 </p>
@@ -166,13 +160,13 @@ The <span class="underline">RSS</span> exporter will then use the property for t
 </div>
 </section>
 
-<section id="outline-container-org97a62fd" class="outline-2">
-<h2 id="org97a62fd">Features</h2>
-<div class="outline-text-2" id="text-org97a62fd">
+<section id="outline-container-org3972a63" class="outline-2">
+<h2 id="org3972a63">Features</h2>
+<div class="outline-text-2" id="text-org3972a63">
 </div>
-<div id="outline-container-orgef70831" class="outline-4">
-<h4 id="orgef70831">Redirection</h4>
-<div class="outline-text-4" id="text-orgef70831">
+<div id="outline-container-org2149254" class="outline-4">
+<h4 id="org2149254">Redirection</h4>
+<div class="outline-text-4" id="text-org2149254">
 <p>
 When the site was generated using Jekyll, posts where generated in the <code>/:year/:month/:day/:id.html</code> route.
 In order to generate a redirect page, use the following keyword to generate a redirect page:
@@ -185,9 +179,9 @@ In order to generate a redirect page, use the following keyword to generate a re
 </div>
 </div>
 
-<div id="outline-container-orgee0e1fe" class="outline-3">
-<h3 id="orgee0e1fe">Drafts</h3>
-<div class="outline-text-3" id="text-orgee0e1fe">
+<div id="outline-container-orgc78b276" class="outline-3">
+<h3 id="orgc78b276">Drafts</h3>
+<div class="outline-text-3" id="text-orgc78b276">
 <p>
 To hide a post from the list of recent posts or the full archive, use:
 </p>
@@ -204,15 +198,15 @@ Note that the post will still be published, but you will need to access it by it
 </div>
 </section>
 
-<section id="outline-container-org97c93b4" class="outline-2">
-<h2 id="org97c93b4">License</h2>
-<div class="outline-text-2" id="text-org97c93b4">
+<section id="outline-container-org5fc1ae6" class="outline-2">
+<h2 id="org5fc1ae6">License</h2>
+<div class="outline-text-2" id="text-org5fc1ae6">
 <p>
 The code used for generating the site is licensed under the <a href="LICENSE">MIT</a> license.
 </p>
 
 <p>
-The content of the site, Copyright (©) 2014-2019 Duncan Mac-Vicar P..
+The content of the site, Copyright (©) 2014-2019 Alexandre Mahrach.
 </p>
 </div>
 </section>
