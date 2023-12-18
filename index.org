@@ -1,32 +1,33 @@
-#+TITLE: Alexandre Mahrach
+#+TITLE: alexm.codes
 
 #+ATTR_HTML: :class summary
 #+BEGIN_export html
 Machine Learning & Quantum Computing Enthusiast. Skilled in handling quarks and queries.
 #+END_export
 
+
 * \faCode News
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:
 
-#+INCLUDE: ./news.org
+#+INCLUDE: ./news.org :minlevel 2
 
 * \faBookmark Latest Posts
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:
 
-#+INCLUDE: posts/posts.org
+#+INCLUDE: posts/posts.org :minlevel 2
 
 Full list at [[file:./posts/archive.org][my Blog.]]
 
 -----
-
 
 * \faGraduationCap Tutorials
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:
 
-- <2023-09-14 Wed> [[file:tutorials/Qiskit/index.org][Intro to Quantum Computing]]
+#+INCLUDE: tutorials/tutorials.org :minlevel 2
+
