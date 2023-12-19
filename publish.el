@@ -311,6 +311,11 @@
          :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf" "html"))
          :publishing-directory "./public/files"
          :publishing-function 'org-publish-attachment)
+   (list "owa"
+         :base-directory "./owa"
+         :recursive t
+         :publishing-directory "./public/owa"
+         :publishing-function 'org-publish-attachment)
    (list "assets"
          :base-directory "./"
          :exclude (regexp-opt '("assets" "public"))
