@@ -66,40 +66,40 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc5dc4f7">Overview</a></li>
-<li><a href="#org3a18572">From bits to qubits</a>
+<li><a href="#org1922915">Overview</a></li>
+<li><a href="#org9ce2616">From bits to qubits</a>
 <ul>
-<li><a href="#orgf73bc92">Dirac notation &amp; density matrices</a></li>
-<li><a href="#org0dfb783">Measurements</a></li>
-<li><a href="#org01f659d">Bloch Sphere</a></li>
+<li><a href="#orgc5ab77b">Dirac notation &amp; density matrices</a></li>
+<li><a href="#orgfdcbc70">Measurements</a></li>
+<li><a href="#org8c1cec5">Bloch Sphere</a></li>
 </ul>
 </li>
-<li><a href="#org75a7a5e">Quantum Circuits</a>
+<li><a href="#orge6249dd">Quantum Circuits</a>
 <ul>
-<li><a href="#org6d0138b">Single qubit gates</a>
+<li><a href="#org41d12d7">Single qubit gates</a>
 <ul>
-<li><a href="#org66a100a">Elementary gates: the Pauli matrices</a></li>
+<li><a href="#org78c9434">Elementary gates: the Pauli matrices</a></li>
 </ul>
 </li>
-<li><a href="#orgd01beb3">Multipartite quantum states</a></li>
-<li><a href="#orgb808f3a">Two-qubit gates</a></li>
+<li><a href="#org083b70b">Multipartite quantum states</a></li>
+<li><a href="#org407e19f">Two-qubit gates</a></li>
 </ul>
 </li>
-<li><a href="#org4a7538e">Entanglement</a>
+<li><a href="#org5bb705e">Entanglement</a>
 <ul>
-<li><a href="#orgdb1d449">Bell states</a></li>
-<li><a href="#org7b97cd1">Creation of Bell states</a></li>
-<li><a href="#org6df0a21">Bell measurement</a></li>
-<li><a href="#org22629bb">Teleportation</a></li>
+<li><a href="#org344ad26">Bell states</a></li>
+<li><a href="#orgd598c67">Creation of Bell states</a></li>
+<li><a href="#orge864acc">Bell measurement</a></li>
+<li><a href="#org64dddbf">Teleportation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<section id="outline-container-orgc5dc4f7" class="outline-2">
-<h2 id="orgc5dc4f7">Overview</h2>
-<div class="outline-text-2" id="text-orgc5dc4f7">
+<section id="outline-container-org1922915" class="outline-2">
+<h2 id="org1922915">Overview</h2>
+<div class="outline-text-2" id="text-org1922915">
 <ol class="org-ol">
 <li>From bits to qubits: Dirac notation, density matrices, measurements, Bloch sphere</li>
 <li>Quantum circuits: basic single-qubit &amp; two-qubit gates, multipartite quantum states</li>
@@ -108,9 +108,9 @@
 </div>
 </section>
 
-<section id="outline-container-org3a18572" class="outline-2">
-<h2 id="org3a18572">From bits to qubits</h2>
-<div class="outline-text-2" id="text-org3a18572">
+<section id="outline-container-org9ce2616" class="outline-2">
+<h2 id="org9ce2616">From bits to qubits</h2>
+<div class="outline-text-2" id="text-org9ce2616">
 <p>
 Classical states for computation are either 0 or 1
 </p>
@@ -137,9 +137,9 @@ In quantum mechanics, a state can be in superposition, ie, simultaneously in 0 a
 </ul>
 </div>
 
-<div id="outline-container-orgf73bc92" class="outline-3">
-<h3 id="orgf73bc92">Dirac notation &amp; density matrices</h3>
-<div class="outline-text-3" id="text-orgf73bc92">
+<div id="outline-container-orgc5ab77b" class="outline-3">
+<h3 id="orgc5ab77b">Dirac notation &amp; density matrices</h3>
+<div class="outline-text-3" id="text-orgc5ab77b">
 <ul class="org-ul">
 <li>Used to describe quantum states: let \(a, b \in \mathbb{C}^2\) (2 dimensional vector with complex entries)
 <ul class="org-ul">
@@ -181,9 +181,9 @@ for \(\rho=\begin{pmatrix} \rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{p
 </div>
 </div>
 
-<div id="outline-container-org0dfb783" class="outline-3">
-<h3 id="org0dfb783">Measurements</h3>
-<div class="outline-text-3" id="text-org0dfb783">
+<div id="outline-container-orgfdcbc70" class="outline-3">
+<h3 id="orgfdcbc70">Measurements</h3>
+<div class="outline-text-3" id="text-orgfdcbc70">
 <p>
 We choose orthogonal bases to describe &amp; measure quantum states (projective measurement).
 During a measure onto the basis\(\{ | 0 \rangle , | 1 \rangle \}\), the state will collapse into either state \(| 0 \rangle\) or \(| 1 \rangle\).
@@ -203,15 +203,15 @@ the probability that a state \(| \psi \rangle\) collapses during a projective me
 </div>
 </div>
 
-<div id="outline-container-org01f659d" class="outline-3">
-<h3 id="org01f659d">Bloch Sphere</h3>
-<div class="outline-text-3" id="text-org01f659d">
+<div id="outline-container-org8c1cec5" class="outline-3">
+<h3 id="org8c1cec5">Bloch Sphere</h3>
+<div class="outline-text-3" id="text-org8c1cec5">
 <p>
 We can write any normalized (pure) state as \(| \psi \rangle = \cos{\frac{\theta}{2}} | 0 \rangle + e^{i \phi}\sin{\frac{\theta}{2}} | 1 \rangle\) where \(\phi \in [0, 2 \pi ]\) describes the relative phase and \(\theta \in [0, \pi]\) determines the probability to measure \(| 0 \rangle\) and \(| 1 \rangle\):   \(P(| 0 \rangle) =\cos^2 \frac{\theta}{2}\) and \(P(| 1 \rangle)=\sin^2 \frac{\theta}{2}\)
 </p>
 
 
-<figure id="orgd2810f5">
+<figure id="org3f69ab4">
 <img src="./images/bloch_sphere.png" alt="bloch_sphere.png">
 
 </figure>
@@ -228,9 +228,9 @@ On the Bloch sphere, angles are twice as big as in Hilbert space. Here, \(\theta
 </div>
 </section>
 
-<section id="outline-container-org75a7a5e" class="outline-2">
-<h2 id="org75a7a5e">Quantum Circuits</h2>
-<div class="outline-text-2" id="text-org75a7a5e">
+<section id="outline-container-orge6249dd" class="outline-2">
+<h2 id="orge6249dd">Quantum Circuits</h2>
+<div class="outline-text-2" id="text-orge6249dd">
 <p>
 The base &ldquo;circuit model&rdquo; can be defined as: a sequence of building blocks that carry out elementary computations called gates
 </p>
@@ -240,17 +240,17 @@ add scheme here
 </p>
 </div>
 
-<div id="outline-container-org6d0138b" class="outline-3">
-<h3 id="org6d0138b">Single qubit gates</h3>
-<div class="outline-text-3" id="text-org6d0138b">
+<div id="outline-container-org41d12d7" class="outline-3">
+<h3 id="org41d12d7">Single qubit gates</h3>
+<div class="outline-text-3" id="text-org41d12d7">
 <ul class="org-ul">
 <li>Classical example: the NOT gate (add scheme)</li>
 <li>Quantum example: as quantum theory is unitary, quantum gates are represented by unitary matrices: \(\mathcal{U}^{\dagger}\mathcal{U}=1\)</li>
 </ul>
 </div>
-<div id="outline-container-org66a100a" class="outline-4">
-<h4 id="org66a100a">Elementary gates: the Pauli matrices</h4>
-<div class="outline-text-4" id="text-org66a100a">
+<div id="outline-container-org78c9434" class="outline-4">
+<h4 id="org78c9434">Elementary gates: the Pauli matrices</h4>
+<div class="outline-text-4" id="text-org78c9434">
 <p>
 \(\sigma_x, \sigma_y, \sigma_z\) are the so-called Pauli matrices, \(\sigma_i^2 =\mathcal{1}\)
 </p>
@@ -265,8 +265,8 @@ Any 1-qubit rotation can be written as a linear combination of them
 </div>
 
 <ul class="org-ul">
-<li><a id="org78077d1"></a>\(\sigma_x\) the bit flip gate<br>
-<div class="outline-text-5" id="text-org78077d1">
+<li><a id="org097d3c7"></a>\(\sigma_x\) the bit flip gate<br>
+<div class="outline-text-5" id="text-org097d3c7">
 <p>
 \(\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\)
 </p>
@@ -281,8 +281,8 @@ rotation around x-axis by \(\pi\)
 </div>
 </li>
 
-<li><a id="orgb4f874b"></a>\(\sigma_z\) the phase flip gate<br>
-<div class="outline-text-5" id="text-orgb4f874b">
+<li><a id="org6f263d4"></a>\(\sigma_z\) the phase flip gate<br>
+<div class="outline-text-5" id="text-org6f263d4">
 <p>
 \(\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\)
 </p>
@@ -297,16 +297,16 @@ rotation around z-axis by \(\pi\)
 </div>
 </li>
 
-<li><a id="orgc2c9cd4"></a>\(\sigma_y\) the bit &amp; phase flip gate<br>
-<div class="outline-text-5" id="text-orgc2c9cd4">
+<li><a id="org5918ca9"></a>\(\sigma_y\) the bit &amp; phase flip gate<br>
+<div class="outline-text-5" id="text-org5918ca9">
 <p>
 \(\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = i \sigma_x . \sigma_z\)
 </p>
 </div>
 </li>
 
-<li><a id="org9413f76"></a>The Hadamard gate<br>
-<div class="outline-text-5" id="text-org9413f76">
+<li><a id="org5b93cc3"></a>The Hadamard gate<br>
+<div class="outline-text-5" id="text-org5b93cc3">
 <p>
 One of the most important gates for quantum circuits
 </p>
@@ -333,8 +333,8 @@ Also used to change between X and Z basis
 </div>
 </li>
 
-<li><a id="org9619f66"></a>The \(\mathcal{S}\) gate<br>
-<div class="outline-text-5" id="text-org9619f66">
+<li><a id="orgc7a100c"></a>The \(\mathcal{S}\) gate<br>
+<div class="outline-text-5" id="text-orgc7a100c">
 <p>
 \(\mathcal{S} = \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix}\)
 </p>
@@ -356,9 +356,9 @@ Adds \(90°\) to the phase \(\phi\)
 </div>
 </div>
 
-<div id="outline-container-orgd01beb3" class="outline-3">
-<h3 id="orgd01beb3">Multipartite quantum states</h3>
-<div class="outline-text-3" id="text-orgd01beb3">
+<div id="outline-container-org083b70b" class="outline-3">
+<h3 id="org083b70b">Multipartite quantum states</h3>
+<div class="outline-text-3" id="text-org083b70b">
 <p>
 We use tensor products to describe multiple states
 </p>
@@ -389,9 +389,9 @@ e.g. \(| \psi^{(00)}\rangle_{AB}= \frac{1}{\sqrt{2}} (| 00 \rangle_{AB} + | 11 \
 </div>
 </div>
 
-<div id="outline-container-orgb808f3a" class="outline-3">
-<h3 id="orgb808f3a">Two-qubit gates</h3>
-<div class="outline-text-3" id="text-orgb808f3a">
+<div id="outline-container-org407e19f" class="outline-3">
+<h3 id="org407e19f">Two-qubit gates</h3>
+<div class="outline-text-3" id="text-org407e19f">
 <p>
 Classical example: XOR gate (add scheme) irreversible: given the output we cannot recover the input
 </p>
@@ -476,17 +476,17 @@ Quantum circuits can perform all functions that can be calculated classically.
 </div>
 </section>
 
-<section id="outline-container-org4a7538e" class="outline-2">
-<h2 id="org4a7538e">Entanglement</h2>
-<div class="outline-text-2" id="text-org4a7538e">
+<section id="outline-container-org5bb705e" class="outline-2">
+<h2 id="org5bb705e">Entanglement</h2>
+<div class="outline-text-2" id="text-org5bb705e">
 <p>
 If a pure state \(| \psi \rangle_{AB}\) on systems A and B cannot be written as \(| \phi \rangle_A \otimes | \Phi \rangle_B\), it is entangled
 </p>
 </div>
 
-<div id="outline-container-orgdb1d449" class="outline-3">
-<h3 id="orgdb1d449">Bell states</h3>
-<div class="outline-text-3" id="text-orgdb1d449">
+<div id="outline-container-org344ad26" class="outline-3">
+<h3 id="org344ad26">Bell states</h3>
+<div class="outline-text-3" id="text-org344ad26">
 <p>
 There are four so-called Bell states that are maximally entangled and constitute an orthonormal basis:
 </p>
@@ -510,9 +510,9 @@ In general, we can write
 </div>
 </div>
 
-<div id="outline-container-org7b97cd1" class="outline-3">
-<h3 id="org7b97cd1">Creation of Bell states</h3>
-<div class="outline-text-3" id="text-org7b97cd1">
+<div id="outline-container-orgd598c67" class="outline-3">
+<h3 id="orgd598c67">Creation of Bell states</h3>
+<div class="outline-text-3" id="text-orgd598c67">
 <p>
 (add scheme)
 </p>
@@ -576,9 +576,9 @@ In general, we can write
 </div>
 </div>
 
-<div id="outline-container-org6df0a21" class="outline-3">
-<h3 id="org6df0a21">Bell measurement</h3>
-<div class="outline-text-3" id="text-org6df0a21">
+<div id="outline-container-orge864acc" class="outline-3">
+<h3 id="orge864acc">Bell measurement</h3>
+<div class="outline-text-3" id="text-orge864acc">
 <p>
 (add scheme)
 </p>
@@ -589,9 +589,9 @@ classical outcomes \(i,j\) correspond to a measure of the state \(| \psi^{ij} \r
 </div>
 </div>
 
-<div id="outline-container-org22629bb" class="outline-3">
-<h3 id="org22629bb">Teleportation</h3>
-<div class="outline-text-3" id="text-org22629bb">
+<div id="outline-container-org64dddbf" class="outline-3">
+<h3 id="org64dddbf">Teleportation</h3>
+<div class="outline-text-3" id="text-org64dddbf">
 <p>
 Alice wants to send her (unknown) state \(|\phi \rangle_S = \alpha | 0 \rangle_S + \beta | 1 \rangle_S\) to Bob.
 She can only send him two classical bit though.
