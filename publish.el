@@ -305,12 +305,19 @@
          :publishing-function 'org-html-publish-to-html
          :section-numbers nil
          :with-toc t)
+   (list "files"
+         :base-directory "./files"
+         :exclude (regexp-opt '("assets" "public"))
+         :recursive t
+         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf"))
+         :publishing-directory "./public/files"
+         :publishing-function 'org-publish-attachment)
    (list "assets"
          :base-directory "./"
          :exclude (regexp-opt '("assets" "public"))
-         :include '("CNAME" "keybase.txt" "LICENSE" ".nojekyll" "publish.el" ".well-known/nostr.json")
+         :include '("CNAME" "LICENSE" "publish.el")
          :recursive t
-         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css"))
+         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf"))
          :publishing-directory "./public"
          :publishing-function 'org-publish-attachment)))
 
