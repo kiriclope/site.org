@@ -314,6 +314,7 @@
    (list "owa"
          :base-directory "./owa"
          :recursive t
+         :base-extension "."
          :publishing-directory "./public/owa"
          :publishing-function 'org-publish-attachment)
    (list "assets"
