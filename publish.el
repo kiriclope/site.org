@@ -309,7 +309,7 @@
          :base-directory "./files"
          :exclude (regexp-opt '("assets" "public"))
          :recursive t
-         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf"))
+         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf" "html"))
          :publishing-directory "./public/files"
          :publishing-function 'org-publish-attachment)
    (list "assets"
@@ -329,7 +329,7 @@
    'org-babel-load-languages
    '((dot . t) (plantuml . t)))
   (let ((make-backup-files nil)
-        (org-publish-project-alist       duncan--publish-project-alist)
+        (org-publish-project-alist duncan--publish-project-alist)
         ;; deactivate cache as it does not take the publish.el file into account
         (user-full-name "Alexandre Mahrach")
         (user-mail-address "mahrachalexandre@gmail.com")
@@ -338,17 +338,17 @@
         (org-publish-use-timestamps-flag nil)
         (org-export-with-section-numbers nil)
         (org-export-with-smart-quotes    t)
-        (org-export-with-toc             nil)
+        (org-export-with-toc nil)
         (org-export-with-sub-superscripts '{})
         (org-html-divs '((preamble  "header" "preamble")
                          (content   "main"   "content")
                          (postamble "footer" "postamble")))
         (org-html-container-element         "section")
         (org-html-metadata-timestamp-format "%d %b. %Y")
-        (org-html-checkbox-type             'html)
-        (org-html-html5-fancy               t)
-        (org-html-validation-link           nil)
-        (org-html-doctype                   "html5")
+        (org-html-checkbox-type 'html)
+        (org-html-html5-fancy t)
+        (org-html-validation-link nil)
+        (org-html-doctype "html5")
         (org-entities-user
          (quote
           (("faArchive" "\\faArchive" nil "<i aria-hidden='true' class='fa fa-archive'></i>" "" "" "")
