@@ -1,9 +1,13 @@
 #+TITLE: News
+
 - <2023-12-18 Mon> Joined [[https://www.clinicbarcelona.org/en/idibaps/about-us/sustainability][IDIBAPS's Sustainability Committee]] to promote more sustainable practices in research.
+
+- <2023-11-22 Thu> Talked about [[file:./files/llm.html][Fine Tuning Large Language Models]] at /*BARCSYN*
+  Fall Retreat/ 23 in Falset.
 
 - <2023-11-15 Fri> Invited to *NYC* to talk about [[https://youtu.be/LKxDM8HO6uo?si=k7GmX1F7T2wWUHe3&t=9124][Attractor Dynamics]] at /*CUNY*'s  Physics of Life Symposium/.
 
 [[file:./files/cuny.png]]
 
-- <2023-11-22 Thu> Talked about [[file:./files/llm.html][Fine Tuning Large Language Models]] at /*BARCSYN*  Fall Retreat/ 23.
+  
 - <2023-02-22 Thur> Gave an [[file:./files/non_comp_neuro.html][Introduction to Quantum Computing]] at /*BARCSYN* Spring Retreat 23/.
