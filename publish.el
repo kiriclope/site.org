@@ -311,7 +311,7 @@
    (list "files"
          :base-directory "./files"
          :recursive t
-         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf" "html"))
+         :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css" "pdf" "html" "webp"))
          :publishing-directory "./public/files"
          :publishing-function 'org-publish-attachment)
    (list "owa"
