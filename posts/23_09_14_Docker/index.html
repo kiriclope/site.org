@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 19 Dec. 2023 -->
+<!-- 25 Dec. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dockerize your Python app</title>
@@ -16,7 +16,7 @@
 
   gtag('config', 'UA-1687066-2');
 </script>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='crossorigin' anonymous='nil'/>
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
 <link rel="stylesheet" href="../../css/site.css?v=dfffad2303a13cebe8e9e438d5bc7ec92d5b18b4645dffec15113add46770f42" type="text/css">
@@ -61,14 +61,14 @@
 <h1 class="title">Dockerize your Python app</h1>
 <p class="subtitle">Sep 14, 2023</p>
 </header>
-<section id="outline-container-org9bd929d" class="outline-2">
-<h2 id="org9bd929d">Intro</h2>
-<div class="outline-text-2" id="text-org9bd929d">
+<section id="outline-container-org259dfed" class="outline-2">
+<h2 id="org259dfed">Intro</h2>
+<div class="outline-text-2" id="text-org259dfed">
 </div>
 
-<div id="outline-container-org8d5bc40" class="outline-3">
-<h3 id="org8d5bc40">What is a container?</h3>
-<div class="outline-text-3" id="text-org8d5bc40">
+<div id="outline-container-org7119d86" class="outline-3">
+<h3 id="org7119d86">What is a container?</h3>
+<div class="outline-text-3" id="text-org7119d86">
 <p>
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages kernel namespaces and cgroups, features that have been in Linux for a long time. Docker makes these capabilities approachable and easy to use.
 </p>
@@ -86,21 +86,21 @@ If you&rsquo;re familiar with chroot, then think of a container as an extended v
 </div>
 </div>
 
-<div id="outline-container-orgcd5e766" class="outline-3">
-<h3 id="orgcd5e766">What is an image?</h3>
-<div class="outline-text-3" id="text-orgcd5e766">
+<div id="outline-container-org060ea6b" class="outline-3">
+<h3 id="org060ea6b">What is an image?</h3>
+<div class="outline-text-3" id="text-org060ea6b">
 <p>
 A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 </p>
 </div>
 </div>
-<div id="outline-container-org8e3238e" class="outline-3">
-<h3 id="org8e3238e">Installation</h3>
-<div class="outline-text-3" id="text-org8e3238e">
+<div id="outline-container-org3a1f771" class="outline-3">
+<h3 id="org3a1f771">Installation</h3>
+<div class="outline-text-3" id="text-org3a1f771">
 </div>
 <ul class="org-ul">
-<li><a id="org8500956"></a>kvm<br>
-<div class="outline-text-5" id="text-org8500956">
+<li><a id="orge9bd02a"></a>kvm<br>
+<div class="outline-text-5" id="text-orge9bd02a">
 <p>
 Docker Desktop runs a VM that requires KVM support
 </p>
@@ -128,8 +128,8 @@ Sign out and sign back in so that your group membership is re-evaluated.
 </div>
 </li>
 
-<li><a id="org8d6c8b8"></a>deb<br>
-<div class="outline-text-5" id="text-org8d6c8b8">
+<li><a id="orgda364fb"></a>deb<br>
+<div class="outline-text-5" id="text-orgda364fb">
 <div class="org-src-container">
 <pre class="src src-sh">wget
 </pre>
@@ -190,8 +190,8 @@ To enable Docker Desktop to start on login
 </div>
 </div>
 </li>
-<li><a id="org3e62c5c"></a>ob-docker<br>
-<div class="outline-text-5" id="text-org3e62c5c">
+<li><a id="org57b8cc5"></a>ob-docker<br>
+<div class="outline-text-5" id="text-org57b8cc5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package docker
   <span class="org-builtin">:ensure</span> t
@@ -204,17 +204,17 @@ To enable Docker Desktop to start on login
 </div>
 </section>
 
-<section id="outline-container-orgbd8235d" class="outline-2">
-<h2 id="orgbd8235d">Containerize an application</h2>
-<div class="outline-text-2" id="text-orgbd8235d">
+<section id="outline-container-org8caa7f6" class="outline-2">
+<h2 id="org8caa7f6">Containerize an application</h2>
+<div class="outline-text-2" id="text-org8caa7f6">
 </div>
-<div id="outline-container-orgc80501d" class="outline-3">
-<h3 id="orgc80501d">Get the app</h3>
-<div class="outline-text-3" id="text-orgc80501d">
+<div id="outline-container-org7ba0658" class="outline-3">
+<h3 id="org7ba0658">Get the app</h3>
+<div class="outline-text-3" id="text-org7ba0658">
 <p>
 Let&rsquo;s say you have the following python repository
 </p>
-<pre class="example" id="org8a788fa">
+<pre class="example" id="org4cdab73">
 ├── my_app/
 │ ├── main.py
 │ ├── README.md
@@ -225,13 +225,13 @@ Let&rsquo;s say you have the following python repository
 </div>
 </div>
 
-<div id="outline-container-orga030752" class="outline-3">
-<h3 id="orga030752">Build an image</h3>
-<div class="outline-text-3" id="text-orga030752">
+<div id="outline-container-orgf8371e0" class="outline-3">
+<h3 id="orgf8371e0">Build an image</h3>
+<div class="outline-text-3" id="text-orgf8371e0">
 </div>
 <ul class="org-ul">
-<li><a id="org97a041f"></a>Create a <code>Dockerfile</code><br>
-<div class="outline-text-5" id="text-org97a041f">
+<li><a id="org7539720"></a>Create a <code>Dockerfile</code><br>
+<div class="outline-text-5" id="text-org7539720">
 <p>
 To build the image, you&rsquo;ll need to use a Dockerfile. A Dockerfile is simply a text-based file with no file extension that contains a script of instructions. Docker uses this script to build a container image.
 </p>
@@ -262,8 +262,8 @@ This Dockerfileis fairly basic, which is perfect for this application. Your <cod
 </div>
 </li>
 
-<li><a id="org33e4231"></a>build<br>
-<div class="outline-text-5" id="text-org33e4231">
+<li><a id="org513eb61"></a>build<br>
+<div class="outline-text-5" id="text-org513eb61">
 <p>
 The <code>docker build</code> command uses the Dockerfile to build a new image.
 </p>
@@ -293,9 +293,9 @@ The <code>.</code> at the end of the <code>docker build</code> command tells Doc
 </ul>
 </div>
 
-<div id="outline-container-org4600d4a" class="outline-3">
-<h3 id="org4600d4a">run an image</h3>
-<div class="outline-text-3" id="text-org4600d4a">
+<div id="outline-container-orgb958523" class="outline-3">
+<h3 id="orgb958523">run an image</h3>
+<div class="outline-text-3" id="text-orgb958523">
 <p>
 Now that you have an image, you can run the application in a container using the <code>docker run</code> command.
 </p>
@@ -321,7 +321,7 @@ If you take a quick look at your containers, you should see at least one contain
 </pre>
 </div>
 
-<pre class="example" id="org3bf1652">
+<pre class="example" id="org52498eb">
 CONTAINER ID   IMAGE    COMMAND                  CREATED             STATUS        PORTS                     NAMES
 df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes  127.0.0.1:3000-&gt;3000/tcp  kiriclope
 </pre>
@@ -329,9 +329,9 @@ df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minu
 </div>
 </section>
 
-<section id="outline-container-org859efd8" class="outline-2">
-<h2 id="org859efd8">References</h2>
-<div class="outline-text-2" id="text-org859efd8">
+<section id="outline-container-org35ded13" class="outline-2">
+<h2 id="org35ded13">References</h2>
+<div class="outline-text-2" id="text-org35ded13">
 <ul class="org-ul">
 <li><a href="https://www.docker.com/">Docker</a></li>
 <li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
@@ -342,7 +342,7 @@ df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minu
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 19 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>

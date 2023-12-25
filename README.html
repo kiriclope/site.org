@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 19 Dec. 2023 -->
+<!-- 25 Dec. 2023 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My homepage with org-mode</title>
@@ -16,7 +16,7 @@
 
   gtag('config', 'UA-1687066-2');
 </script>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='crossorigin' anonymous='nil'/>
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
 <link rel='stylesheet' href='css/index.css?v=c18771e4d9917f7bbeba0dc8707195c42a1cf1d75f55928214254bd81d1a0c6e'/>
@@ -61,27 +61,27 @@
 <header>
 <h1 class="title">My homepage with org-mode</h1>
 </header>
-<section id="outline-container-orgc1fe34a" class="outline-2">
-<h2 id="orgc1fe34a">Introduction</h2>
-<div class="outline-text-2" id="text-orgc1fe34a">
+<section id="outline-container-org5758ce1" class="outline-2">
+<h2 id="org5758ce1">Introduction</h2>
+<div class="outline-text-2" id="text-org5758ce1">
 <p>
 This setup based on <a href="https://orgmode.org">org-mode</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-orgddf67cc" class="outline-2">
-<h2 id="orgddf67cc">Implementation</h2>
-<div class="outline-text-2" id="text-orgddf67cc">
+<section id="outline-container-orgd801d53" class="outline-2">
+<h2 id="orgd801d53">Implementation</h2>
+<div class="outline-text-2" id="text-orgd801d53">
 <p>
 For details about the implementation see <a href="posts/2019-09-03-migrating-from-jekyll-to-org/index.html">the introductory post</a> and the <a href="https://github.com/dmacvicar/site.org"><i aria-hidden='true' class='fa fa-github'></i> Source</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org1924c82" class="outline-2">
-<h2 id="org1924c82">Usage</h2>
-<div class="outline-text-2" id="text-org1924c82">
+<section id="outline-container-org4386a1a" class="outline-2">
+<h2 id="org4386a1a">Usage</h2>
+<div class="outline-text-2" id="text-org4386a1a">
 <ul class="org-ul">
 <li>Posts go into <code>posts/</code>
 Preferably in their own subdirectory together with all their assets (self-contained)</li>
@@ -92,7 +92,7 @@ Preferably in their own subdirectory together with all their assets (self-contai
 To generate:
 </p>
 
-<pre class="example" id="org4eb692f">
+<pre class="example" id="org1b349cb">
 $ make
 </pre>
 
@@ -101,9 +101,9 @@ The output site will be rendered in <code>public/</code>.
 </p>
 </div>
 
-<div id="outline-container-org9458a8b" class="outline-3">
-<h3 id="org9458a8b">RSS Feeds</h3>
-<div class="outline-text-3" id="text-org9458a8b">
+<div id="outline-container-orgbb511b8" class="outline-3">
+<h3 id="orgbb511b8">RSS Feeds</h3>
+<div class="outline-text-3" id="text-orgbb511b8">
 <p>
 I am documenting this part because it is complicated and I tend to forget how it works everytime something breaks.
 </p>
@@ -160,13 +160,13 @@ The <span class="underline">RSS</span> exporter will then use the property for t
 </div>
 </section>
 
-<section id="outline-container-org6a40045" class="outline-2">
-<h2 id="org6a40045">Features</h2>
-<div class="outline-text-2" id="text-org6a40045">
+<section id="outline-container-org189ab0c" class="outline-2">
+<h2 id="org189ab0c">Features</h2>
+<div class="outline-text-2" id="text-org189ab0c">
 </div>
-<div id="outline-container-orgdede4b3" class="outline-4">
-<h4 id="orgdede4b3">Redirection</h4>
-<div class="outline-text-4" id="text-orgdede4b3">
+<div id="outline-container-orgda30f2c" class="outline-4">
+<h4 id="orgda30f2c">Redirection</h4>
+<div class="outline-text-4" id="text-orgda30f2c">
 <p>
 When the site was generated using Jekyll, posts where generated in the <code>/:year/:month/:day/:id.html</code> route.
 In order to generate a redirect page, use the following keyword to generate a redirect page:
@@ -179,9 +179,9 @@ In order to generate a redirect page, use the following keyword to generate a re
 </div>
 </div>
 
-<div id="outline-container-org96e9e7e" class="outline-3">
-<h3 id="org96e9e7e">Drafts</h3>
-<div class="outline-text-3" id="text-org96e9e7e">
+<div id="outline-container-orgf3684c6" class="outline-3">
+<h3 id="orgf3684c6">Drafts</h3>
+<div class="outline-text-3" id="text-orgf3684c6">
 <p>
 To hide a post from the list of recent posts or the full archive, use:
 </p>
@@ -198,9 +198,9 @@ Note that the post will still be published, but you will need to access it by it
 </div>
 </section>
 
-<section id="outline-container-org16fecd3" class="outline-2">
-<h2 id="org16fecd3">License</h2>
-<div class="outline-text-2" id="text-org16fecd3">
+<section id="outline-container-orgdb1d30b" class="outline-2">
+<h2 id="orgdb1d30b">License</h2>
+<div class="outline-text-2" id="text-orgdb1d30b">
 <p>
 The code used for generating the site is licensed under the <a href="LICENSE">MIT</a> license.
 </p>
@@ -212,7 +212,7 @@ The content of the site, Copyright (©) 2014-2019 Alexandre Mahrach.
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 19 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>
