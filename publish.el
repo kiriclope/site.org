@@ -1,3 +1,6 @@
+;;; Package --- summary
+;;; Commentary:
+;;; Code:
 (require 'package)
 (package-initialize)
 (setq package-archives '(("nongnu" . "https://elpa.nongnu.org/nongnu/")
@@ -137,7 +140,7 @@
   "List of elements going in head for all pages.  Takes PLIST as context."
   (let ((description "The blog of Alexandre Mahrach"))
     (list
-     (list "link" (list "href" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" "rel" "stylesheet" "integrity" "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" "crossorigin" "anonymous"))
+     (list "link" (list "href" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" "rel" "stylesheet" "integrity" "crossorigin" "anonymous"))
      (list "meta" (list "description" description))
      (list "link" (list "rel" "alternate" "type" "application+rss/xml" "title" description "href" "posts/rss.xml")))))
 
