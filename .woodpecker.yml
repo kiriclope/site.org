@@ -1,0 +1,23 @@
+pipeline:
+  checkout:
+    image: woodpeckerci/plugin-git
+    depth: 1
+  
+  build:
+    image: iquiw/alpine-emacs
+    commands:
+      - ./build.sh
+    when:
+      event: push
+      branch: main
+
+  deploy:
+    image: appleboy/drone-gh-pages
+    settings:
+      repo: leoncarmin/org_site
+      target_branch: pages
+      publish_dir: ./public
+      token:
+        from_secret: codeberg_token
+    when:
+      status: success
