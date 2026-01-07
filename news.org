@@ -2,7 +2,7 @@
 
 - 2025-07 Teached at [[https://biortc.com/computational-neuroscience-course-2026/][BioRTC-Simons Computational Neuroscience Course]] in Nigeria
 
-[[file:files/biortc.webp]]
+[[file:files/biortc.png]]
 
 - <2023-12-18 Mon> Joined [[https://www.clinicbarcelona.org/en/idibaps/about-us/sustainability][IDIBAPS's Sustainability Committee]] to promote more
   sustainable practices in research.
