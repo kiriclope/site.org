@@ -65,7 +65,6 @@ I am documenting this part because it is complicated and I tend to forget how it
 - The sitemap function uses _org-list-to-generic_ to create a list of headlines without adding a star, as it will be added by the entry function.
 
 * Features
-
 *** Redirection
 
   When the site was generated using Jekyll, posts where generated in the =/:year/:month/:day/:id.html= route.
@@ -82,7 +81,7 @@ I am documenting this part because it is complicated and I tend to forget how it
   #+BEGIN_SRC org
   #+DRAFT t
   #+END_SRC
- 
+
   Note that the post will still be published, but you will need to access it by its URL directly.
 
 * License
