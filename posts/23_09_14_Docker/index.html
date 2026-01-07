@@ -77,14 +77,14 @@
 <h1 class="title">Dockerize your Python app</h1>
 <p class="subtitle">Sep 14, 2023</p>
 </header>
-<section id="outline-container-org9bce2d0" class="outline-2">
-<h2 id="org9bce2d0">Intro</h2>
-<div class="outline-text-2" id="text-org9bce2d0">
+<section id="outline-container-orge5b6b12" class="outline-2">
+<h2 id="orge5b6b12">Intro</h2>
+<div class="outline-text-2" id="text-orge5b6b12">
 </div>
 
-<div id="outline-container-org0fc52ae" class="outline-3">
-<h3 id="org0fc52ae">What is a container?</h3>
-<div class="outline-text-3" id="text-org0fc52ae">
+<div id="outline-container-org2ae0b5f" class="outline-3">
+<h3 id="org2ae0b5f">What is a container?</h3>
+<div class="outline-text-3" id="text-org2ae0b5f">
 <p>
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages kernel namespaces and cgroups, features that have been in Linux for a long time. Docker makes these capabilities approachable and easy to use.
 </p>
@@ -102,21 +102,21 @@ If you&rsquo;re familiar with chroot, then think of a container as an extended v
 </div>
 </div>
 
-<div id="outline-container-orgca73a94" class="outline-3">
-<h3 id="orgca73a94">What is an image?</h3>
-<div class="outline-text-3" id="text-orgca73a94">
+<div id="outline-container-org67c0098" class="outline-3">
+<h3 id="org67c0098">What is an image?</h3>
+<div class="outline-text-3" id="text-org67c0098">
 <p>
 A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 </p>
 </div>
 </div>
-<div id="outline-container-org67f15cc" class="outline-3">
-<h3 id="org67f15cc">Installation</h3>
-<div class="outline-text-3" id="text-org67f15cc">
+<div id="outline-container-org276588c" class="outline-3">
+<h3 id="org276588c">Installation</h3>
+<div class="outline-text-3" id="text-org276588c">
 </div>
 <ul class="org-ul">
-<li><a id="org32e7d77"></a>kvm<br>
-<div class="outline-text-5" id="text-org32e7d77">
+<li><a id="org92d19c7"></a>kvm<br>
+<div class="outline-text-5" id="text-org92d19c7">
 <p>
 Docker Desktop runs a VM that requires KVM support
 </p>
@@ -144,8 +144,8 @@ Sign out and sign back in so that your group membership is re-evaluated.
 </div>
 </li>
 
-<li><a id="org2389ddd"></a>deb<br>
-<div class="outline-text-5" id="text-org2389ddd">
+<li><a id="orgcdcd260"></a>deb<br>
+<div class="outline-text-5" id="text-orgcdcd260">
 <div class="org-src-container">
 <pre class="src src-sh">wget
 </pre>
@@ -206,8 +206,8 @@ To enable Docker Desktop to start on login
 </div>
 </div>
 </li>
-<li><a id="orgb563b34"></a>ob-docker<br>
-<div class="outline-text-5" id="text-orgb563b34">
+<li><a id="org047f0c7"></a>ob-docker<br>
+<div class="outline-text-5" id="text-org047f0c7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package docker
   <span class="org-builtin">:ensure</span> t
@@ -220,17 +220,17 @@ To enable Docker Desktop to start on login
 </div>
 </section>
 
-<section id="outline-container-org642c3ca" class="outline-2">
-<h2 id="org642c3ca">Containerize an application</h2>
-<div class="outline-text-2" id="text-org642c3ca">
+<section id="outline-container-org72956fd" class="outline-2">
+<h2 id="org72956fd">Containerize an application</h2>
+<div class="outline-text-2" id="text-org72956fd">
 </div>
-<div id="outline-container-org69c0e67" class="outline-3">
-<h3 id="org69c0e67">Get the app</h3>
-<div class="outline-text-3" id="text-org69c0e67">
+<div id="outline-container-org32593ad" class="outline-3">
+<h3 id="org32593ad">Get the app</h3>
+<div class="outline-text-3" id="text-org32593ad">
 <p>
 Let&rsquo;s say you have the following python repository
 </p>
-<pre class="example" id="org2f1ece9">
+<pre class="example" id="org840039e">
 ├── my_app/
 │ ├── main.py
 │ ├── README.md
@@ -241,13 +241,13 @@ Let&rsquo;s say you have the following python repository
 </div>
 </div>
 
-<div id="outline-container-orgd9ad197" class="outline-3">
-<h3 id="orgd9ad197">Build an image</h3>
-<div class="outline-text-3" id="text-orgd9ad197">
+<div id="outline-container-orgab80874" class="outline-3">
+<h3 id="orgab80874">Build an image</h3>
+<div class="outline-text-3" id="text-orgab80874">
 </div>
 <ul class="org-ul">
-<li><a id="orgc14a297"></a>Create a <code>Dockerfile</code><br>
-<div class="outline-text-5" id="text-orgc14a297">
+<li><a id="org0f09ddd"></a>Create a <code>Dockerfile</code><br>
+<div class="outline-text-5" id="text-org0f09ddd">
 <p>
 To build the image, you&rsquo;ll need to use a Dockerfile. A Dockerfile is simply a text-based file with no file extension that contains a script of instructions. Docker uses this script to build a container image.
 </p>
@@ -278,8 +278,8 @@ This Dockerfileis fairly basic, which is perfect for this application. Your <cod
 </div>
 </li>
 
-<li><a id="org9d01a6c"></a>build<br>
-<div class="outline-text-5" id="text-org9d01a6c">
+<li><a id="orga4ec6ea"></a>build<br>
+<div class="outline-text-5" id="text-orga4ec6ea">
 <p>
 The <code>docker build</code> command uses the Dockerfile to build a new image.
 </p>
@@ -309,9 +309,9 @@ The <code>.</code> at the end of the <code>docker build</code> command tells Doc
 </ul>
 </div>
 
-<div id="outline-container-orgeec5a50" class="outline-3">
-<h3 id="orgeec5a50">run an image</h3>
-<div class="outline-text-3" id="text-orgeec5a50">
+<div id="outline-container-org43baff4" class="outline-3">
+<h3 id="org43baff4">run an image</h3>
+<div class="outline-text-3" id="text-org43baff4">
 <p>
 Now that you have an image, you can run the application in a container using the <code>docker run</code> command.
 </p>
@@ -337,7 +337,7 @@ If you take a quick look at your containers, you should see at least one contain
 </pre>
 </div>
 
-<pre class="example" id="org45a96be">
+<pre class="example" id="org7e20e25">
 CONTAINER ID   IMAGE    COMMAND                  CREATED             STATUS        PORTS                     NAMES
 df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes  127.0.0.1:3000-&gt;3000/tcp  kiriclope
 </pre>
@@ -345,9 +345,9 @@ df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minu
 </div>
 </section>
 
-<section id="outline-container-org84b680c" class="outline-2">
-<h2 id="org84b680c">References</h2>
-<div class="outline-text-2" id="text-org84b680c">
+<section id="outline-container-orgc0c1bd0" class="outline-2">
+<h2 id="orgc0c1bd0">References</h2>
+<div class="outline-text-2" id="text-orgc0c1bd0">
 <ul class="org-ul">
 <li><a href="https://www.docker.com/">Docker</a></li>
 <li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
