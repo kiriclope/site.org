@@ -77,9 +77,9 @@
 <h1 class="title">Fine-tuning GPT with openai API</h1>
 <p class="subtitle">Jan 07, 2026</p>
 </header>
-<section id="outline-container-org1bdc997" class="outline-2">
-<h2 id="org1bdc997">Fine tuning GPT-3.5 with openai API</h2>
-<div class="outline-text-2" id="text-org1bdc997">
+<section id="outline-container-orgb455be6" class="outline-2">
+<h2 id="orgb455be6">Fine tuning GPT-3.5 with openai API</h2>
+<div class="outline-text-2" id="text-orgb455be6">
 <p>
 Here we are going to see how to fine-tune GPT-3.5 using the openai api.  We will
 tune GPT-3.5-turbo to learn the content the metadata of a librairy of academic
@@ -87,13 +87,13 @@ papers.
 </p>
 </div>
 
-<div id="outline-container-org3ca422a" class="outline-3">
-<h3 id="org3ca422a">Data formating</h3>
-<div class="outline-text-3" id="text-org3ca422a">
+<div id="outline-container-orge652080" class="outline-3">
+<h3 id="orge652080">Data formating</h3>
+<div class="outline-text-3" id="text-orge652080">
 </div>
-<div id="outline-container-org601f68c" class="outline-4">
-<h4 id="org601f68c">Create json from xml</h4>
-<div class="outline-text-4" id="text-org601f68c">
+<div id="outline-container-org956caa2" class="outline-4">
+<h4 id="org956caa2">Create json from xml</h4>
+<div class="outline-text-4" id="text-org956caa2">
 <p>
 The original data comes from mendeley in xml format.  We need to convert it into
 a jsonl file.
@@ -160,9 +160,9 @@ xml_to_jsonl(file_path)
 </div>
 </div>
 
-<div id="outline-container-org46eb980" class="outline-4">
-<h4 id="org46eb980">Data Splitting</h4>
-<div class="outline-text-4" id="text-org46eb980">
+<div id="outline-container-org59e6c80" class="outline-4">
+<h4 id="org59e6c80">Data Splitting</h4>
+<div class="outline-text-4" id="text-org59e6c80">
 <p>
 We need to split the data to check the model performance on unseen data.
 </p>
@@ -203,9 +203,9 @@ with open(file_path + '_test.jsonl', 'w') as f:
 </div>
 </div>
 
-<div id="outline-container-orgf2c3872" class="outline-3">
-<h3 id="orgf2c3872">Creating a conversational chat</h3>
-<div class="outline-text-3" id="text-orgf2c3872">
+<div id="outline-container-org231527b" class="outline-3">
+<h3 id="org231527b">Creating a conversational chat</h3>
+<div class="outline-text-3" id="text-org231527b">
 <p>
 A essential element of fine-tuning a model is to define a proper conversation on which to train GPT
 Here, we will ask gpt to try to infer the key points of a given paper based on its abstract.
@@ -219,7 +219,7 @@ Then we ask him to infer the main topics/findings of the article.
 <p>
 For that we will use the following jsonl conversation message:
 </p>
-<pre class="example" id="orge7d6fa6">
+<pre class="example" id="orgc3b1026">
 [
 {"role": "system", "content": "You are a helpful assistant."},
 {"role": "user", "content": f'Give me a brief overview of "{title}".'},
@@ -296,9 +296,9 @@ write_chat_format_file(chat_format_data, file_path + '_chat.jsonl')
 </div>
 </div>
 
-<div id="outline-container-orgb7317e9" class="outline-4">
-<h4 id="orgb7317e9">Upload the training data</h4>
-<div class="outline-text-4" id="text-orgb7317e9">
+<div id="outline-container-orgb72446d" class="outline-4">
+<h4 id="orgb72446d">Upload the training data</h4>
+<div class="outline-text-4" id="text-orgb72446d">
 <p>
 Now, we need to upload our chat formated training data to the openai servers:
 </p>
@@ -323,13 +323,13 @@ We will then tune a model using the file id:
 </div>
 </div>
 
-<div id="outline-container-org8f0251f" class="outline-3">
-<h3 id="org8f0251f">Fine-tuning GPT</h3>
-<div class="outline-text-3" id="text-org8f0251f">
+<div id="outline-container-orgf08f4fe" class="outline-3">
+<h3 id="orgf08f4fe">Fine-tuning GPT</h3>
+<div class="outline-text-3" id="text-orgf08f4fe">
 </div>
-<div id="outline-container-org7cd2bc0" class="outline-4">
-<h4 id="org7cd2bc0">Creating a job</h4>
-<div class="outline-text-4" id="text-org7cd2bc0">
+<div id="outline-container-org8edebad" class="outline-4">
+<h4 id="org8edebad">Creating a job</h4>
+<div class="outline-text-4" id="text-org8edebad">
 <p>
 In this example, we will fine-tune gpt-3.5-turbo (but we could have used
 babbage-002, davinci-002, or an existing fine-tuned model) by providing the file
@@ -347,9 +347,9 @@ Note: you can customize your fine-tuned model&rsquo;s name using the suffix para
 </div>
 </div>
 
-<div id="outline-container-orgb663210" class="outline-4">
-<h4 id="orgb663210">Checking a job&rsquo;s status</h4>
-<div class="outline-text-4" id="text-orgb663210">
+<div id="outline-container-org7e321d9" class="outline-4">
+<h4 id="org7e321d9">Checking a job&rsquo;s status</h4>
+<div class="outline-text-4" id="text-org7e321d9">
 <p>
 We can check the job status with
 </p>
@@ -362,9 +362,9 @@ print(my_jobs.data[0].status)
 </div>
 </div>
 
-<div id="outline-container-orga58d3a3" class="outline-4">
-<h4 id="orga58d3a3">Asking other queries</h4>
-<div class="outline-text-4" id="text-orga58d3a3">
+<div id="outline-container-org55e1a44" class="outline-4">
+<h4 id="org55e1a44">Asking other queries</h4>
+<div class="outline-text-4" id="text-org55e1a44">
 <div class="org-src-container">
 <pre class="src src-ipython"># List 10 fine-tuning jobs openai.FineTuningJob.list(limit=10)
 
@@ -383,9 +383,9 @@ openai.Model.delete("ft:gpt-3.5-turbo:acemeco:suffix:abc123")
 </div>
 </div>
 
-<div id="outline-container-org49e93cb" class="outline-3">
-<h3 id="org49e93cb">Using our fine-tuned model</h3>
-<div class="outline-text-3" id="text-org49e93cb">
+<div id="outline-container-orgdd85a87" class="outline-3">
+<h3 id="orgdd85a87">Using our fine-tuned model</h3>
+<div class="outline-text-3" id="text-orgdd85a87">
 <p>
 We can use our fine-tune model from the openai website or from the api like this:
 </p>
@@ -409,7 +409,7 @@ Facing ChatGPT or even GPT4 with the same prompts, one sees how helpful fine-tun
 <p>
 GPT4
 </p>
-<pre class="example" id="org1b89c5f">
+<pre class="example" id="orgccdbd22">
 As an AI assistant, I'm unable to access real-time databases or specific reference materials like Barraclough D, Conroy M, Lee D, Nature Neuroscience 2018 directly. However, based on a generic understanding of another related topic, here's an idea for a generic follow-up project:
 
 Assuming the study was about neural coding and decision making in primate cerebral cortex, a potential follow-up study could aim to understand how these decisions are affected by altering neural activity in specific cortical regions. This could use methods like optogenetics or chemogenetics to selectively manipulate neurons during decision-making tasks, helping to establish causal links between cortical activity and behavioral outcomes.
@@ -420,7 +420,7 @@ Remember to always design follow-up projects based on the questions and gaps lef
 <p>
 GPT3.5-turbo
 </p>
-<pre class="example" id="orgcab4d90">
+<pre class="example" id="org9c2a5ae">
 Based on the findings of the study by Barraclough, Conroy, and Lee in Nature Neuroscience 2018, a possible follow-up project could be to investigate the long-term effects of the observed neural changes.
 </pre>
 </div>
