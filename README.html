@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 25 Dec. 2023 -->
+<!-- 07 Jan. 2026 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My homepage with org-mode</title>
@@ -19,7 +19,6 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='crossorigin' anonymous='nil'/>
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
-<link rel='stylesheet' href='css/index.css?v=c18771e4d9917f7bbeba0dc8707195c42a1cf1d75f55928214254bd81d1a0c6e'/>
 <link rel="stylesheet" href="css/site.css?v=dfffad2303a13cebe8e9e438d5bc7ec92d5b18b4645dffec15113add46770f42" type="text/css">
 </head>
 <body>
@@ -56,32 +55,48 @@
     </a>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode({
+      bottom: 'unset', // Remove bottom positioning
+      right: '10px', // Remove default right positioning
+      left: 'unset', // Remove default left positioning
+      label: '🌓', // Custom label/icon
+      time: '0.5s', // Transition time
+      autoMatchOsTheme: false, // Disable automatic theme matching based on OS preferences
+      // location: 'top-right' // Set position to top right
+    }).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
 </header>
 <main id="content">
 <header>
 <h1 class="title">My homepage with org-mode</h1>
 </header>
-<section id="outline-container-orge3bff2a" class="outline-2">
-<h2 id="orge3bff2a">Introduction</h2>
-<div class="outline-text-2" id="text-orge3bff2a">
+<section id="outline-container-org07c4045" class="outline-2">
+<h2 id="org07c4045">Introduction</h2>
+<div class="outline-text-2" id="text-org07c4045">
 <p>
 This setup based on <a href="https://orgmode.org">org-mode</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org83f7e2a" class="outline-2">
-<h2 id="org83f7e2a">Implementation</h2>
-<div class="outline-text-2" id="text-org83f7e2a">
+<section id="outline-container-orgd5bd1ee" class="outline-2">
+<h2 id="orgd5bd1ee">Implementation</h2>
+<div class="outline-text-2" id="text-orgd5bd1ee">
 <p>
 For details about the implementation see <a href="posts/2019-09-03-migrating-from-jekyll-to-org/index.html">the introductory post</a> and the <a href="https://github.com/dmacvicar/site.org"><i aria-hidden='true' class='fa fa-github'></i> Source</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org1e346d5" class="outline-2">
-<h2 id="org1e346d5">Usage</h2>
-<div class="outline-text-2" id="text-org1e346d5">
+<section id="outline-container-org42e588b" class="outline-2">
+<h2 id="org42e588b">Usage</h2>
+<div class="outline-text-2" id="text-org42e588b">
 <ul class="org-ul">
 <li>Posts go into <code>posts/</code>
 Preferably in their own subdirectory together with all their assets (self-contained)</li>
@@ -92,7 +107,7 @@ Preferably in their own subdirectory together with all their assets (self-contai
 To generate:
 </p>
 
-<pre class="example" id="orgc3865a8">
+<pre class="example" id="orgaec758a">
 $ make
 </pre>
 
@@ -101,9 +116,9 @@ The output site will be rendered in <code>public/</code>.
 </p>
 </div>
 
-<div id="outline-container-orgbb17ceb" class="outline-3">
-<h3 id="orgbb17ceb">RSS Feeds</h3>
-<div class="outline-text-3" id="text-orgbb17ceb">
+<div id="outline-container-org12c0a1a" class="outline-3">
+<h3 id="org12c0a1a">RSS Feeds</h3>
+<div class="outline-text-3" id="text-org12c0a1a">
 <p>
 I am documenting this part because it is complicated and I tend to forget how it works everytime something breaks.
 </p>
@@ -160,13 +175,13 @@ The <span class="underline">RSS</span> exporter will then use the property for t
 </div>
 </section>
 
-<section id="outline-container-orgff7da13" class="outline-2">
-<h2 id="orgff7da13">Features</h2>
-<div class="outline-text-2" id="text-orgff7da13">
+<section id="outline-container-org38b810a" class="outline-2">
+<h2 id="org38b810a">Features</h2>
+<div class="outline-text-2" id="text-org38b810a">
 </div>
-<div id="outline-container-org7e2de1d" class="outline-4">
-<h4 id="org7e2de1d">Redirection</h4>
-<div class="outline-text-4" id="text-org7e2de1d">
+<div id="outline-container-org270aad3" class="outline-4">
+<h4 id="org270aad3">Redirection</h4>
+<div class="outline-text-4" id="text-org270aad3">
 <p>
 When the site was generated using Jekyll, posts where generated in the <code>/:year/:month/:day/:id.html</code> route.
 In order to generate a redirect page, use the following keyword to generate a redirect page:
@@ -179,9 +194,9 @@ In order to generate a redirect page, use the following keyword to generate a re
 </div>
 </div>
 
-<div id="outline-container-org73fcdd0" class="outline-3">
-<h3 id="org73fcdd0">Drafts</h3>
-<div class="outline-text-3" id="text-org73fcdd0">
+<div id="outline-container-org210197d" class="outline-3">
+<h3 id="org210197d">Drafts</h3>
+<div class="outline-text-3" id="text-org210197d">
 <p>
 To hide a post from the list of recent posts or the full archive, use:
 </p>
@@ -198,9 +213,9 @@ Note that the post will still be published, but you will need to access it by it
 </div>
 </section>
 
-<section id="outline-container-org89fc177" class="outline-2">
-<h2 id="org89fc177">License</h2>
-<div class="outline-text-2" id="text-org89fc177">
+<section id="outline-container-orgddc123b" class="outline-2">
+<h2 id="orgddc123b">License</h2>
+<div class="outline-text-2" id="text-orgddc123b">
 <p>
 The code used for generating the site is licensed under the <a href="LICENSE">MIT</a> license.
 </p>
@@ -212,7 +227,7 @@ The content of the site, Copyright (©) 2014-2019 Alexandre Mahrach.
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 07 Jan. 2026. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>

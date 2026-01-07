@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 25 Dec. 2023 -->
+<!-- 07 Jan. 2026 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>News</title>
@@ -19,7 +19,6 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='crossorigin' anonymous='nil'/>
 <meta description='The blog of Alexandre Mahrach'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Alexandre Mahrach' href='posts/rss.xml'/>
-<link rel='stylesheet' href='css/index.css?v=c18771e4d9917f7bbeba0dc8707195c42a1cf1d75f55928214254bd81d1a0c6e'/>
 <link rel="stylesheet" href="css/site.css?v=dfffad2303a13cebe8e9e438d5bc7ec92d5b18b4645dffec15113add46770f42" type="text/css">
 </head>
 <body>
@@ -56,6 +55,22 @@
     </a>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode({
+      bottom: 'unset', // Remove bottom positioning
+      right: '10px', // Remove default right positioning
+      left: 'unset', // Remove default left positioning
+      label: '🌓', // Custom label/icon
+      time: '0.5s', // Transition time
+      autoMatchOsTheme: false, // Disable automatic theme matching based on OS preferences
+      // location: 'top-right' // Set position to top right
+    }).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
 </header>
 <main id="content">
 <header>
@@ -67,7 +82,7 @@ sustainable practices in research.
 </p>
 
 
-<figure id="orge39f7f3">
+<figure id="org834f55d">
 <img src="./files/sustain.png" alt="sustain.png">
 
 </figure></li>
@@ -78,7 +93,7 @@ sustainable practices in research.
 </ul>
 
 
-<figure id="org6bdb0c6">
+<figure id="org1c2b8b9">
 <img src="./files/cuny.png" alt="cuny.png">
 
 </figure>
@@ -88,7 +103,7 @@ sustainable practices in research.
 </ul>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 07 Jan. 2026. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>

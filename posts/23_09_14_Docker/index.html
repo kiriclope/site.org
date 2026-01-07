@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 25 Dec. 2023 -->
+<!-- 07 Jan. 2026 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dockerize your Python app</title>
@@ -55,20 +55,36 @@
     </a>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode({
+      bottom: 'unset', // Remove bottom positioning
+      right: '10px', // Remove default right positioning
+      left: 'unset', // Remove default left positioning
+      label: '🌓', // Custom label/icon
+      time: '0.5s', // Transition time
+      autoMatchOsTheme: false, // Disable automatic theme matching based on OS preferences
+      // location: 'top-right' // Set position to top right
+    }).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
 </header>
 <main id="content">
 <header>
 <h1 class="title">Dockerize your Python app</h1>
 <p class="subtitle">Sep 14, 2023</p>
 </header>
-<section id="outline-container-orgbbe6a00" class="outline-2">
-<h2 id="orgbbe6a00">Intro</h2>
-<div class="outline-text-2" id="text-orgbbe6a00">
+<section id="outline-container-org534e040" class="outline-2">
+<h2 id="org534e040">Intro</h2>
+<div class="outline-text-2" id="text-org534e040">
 </div>
 
-<div id="outline-container-org9f4c659" class="outline-3">
-<h3 id="org9f4c659">What is a container?</h3>
-<div class="outline-text-3" id="text-org9f4c659">
+<div id="outline-container-orgea56b5a" class="outline-3">
+<h3 id="orgea56b5a">What is a container?</h3>
+<div class="outline-text-3" id="text-orgea56b5a">
 <p>
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages kernel namespaces and cgroups, features that have been in Linux for a long time. Docker makes these capabilities approachable and easy to use.
 </p>
@@ -86,21 +102,21 @@ If you&rsquo;re familiar with chroot, then think of a container as an extended v
 </div>
 </div>
 
-<div id="outline-container-org932500e" class="outline-3">
-<h3 id="org932500e">What is an image?</h3>
-<div class="outline-text-3" id="text-org932500e">
+<div id="outline-container-org4f870d8" class="outline-3">
+<h3 id="org4f870d8">What is an image?</h3>
+<div class="outline-text-3" id="text-org4f870d8">
 <p>
 A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 </p>
 </div>
 </div>
-<div id="outline-container-org6536ffc" class="outline-3">
-<h3 id="org6536ffc">Installation</h3>
-<div class="outline-text-3" id="text-org6536ffc">
+<div id="outline-container-orgf7dafa3" class="outline-3">
+<h3 id="orgf7dafa3">Installation</h3>
+<div class="outline-text-3" id="text-orgf7dafa3">
 </div>
 <ul class="org-ul">
-<li><a id="orga9bd81f"></a>kvm<br>
-<div class="outline-text-5" id="text-orga9bd81f">
+<li><a id="orgf2f2d25"></a>kvm<br>
+<div class="outline-text-5" id="text-orgf2f2d25">
 <p>
 Docker Desktop runs a VM that requires KVM support
 </p>
@@ -115,10 +131,10 @@ Set up KVM device user permissions link
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">To check ownership of /dev/kvm</span>
-ls -al /dev/kvm
-<span class="org-comment-delimiter"># </span><span class="org-comment">Add your user to the kvm group in order to access the kvm device</span>
-sudo usermod -aG kvm $<span class="org-variable-name">USER</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">To check ownership of /dev/kvm
+</span>ls -al /dev/kvm
+<span class="org-comment-delimiter"># </span><span class="org-comment">Add your user to the kvm group in order to access the kvm device
+</span>sudo usermod -aG kvm $<span class="org-variable-name">USER</span>
 </pre>
 </div>
 
@@ -128,8 +144,8 @@ Sign out and sign back in so that your group membership is re-evaluated.
 </div>
 </li>
 
-<li><a id="orgd54a25a"></a>deb<br>
-<div class="outline-text-5" id="text-orgd54a25a">
+<li><a id="org03cce0c"></a>deb<br>
+<div class="outline-text-5" id="text-org03cce0c">
 <div class="org-src-container">
 <pre class="src src-sh">wget
 </pre>
@@ -166,18 +182,18 @@ Check the versions of the binaries
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">docker-credential-gcloud compose version
-<span class="org-comment-delimiter"># </span><span class="org-comment">Docker Compose version v2.17.3</span>
-
+<span class="org-comment-delimiter"># </span><span class="org-comment">Docker Compose version v2.17.3
+</span>
 docker --version
-<span class="org-comment-delimiter"># </span><span class="org-comment">Docker version 23.0.5, build bc4487a</span>
-
+<span class="org-comment-delimiter"># </span><span class="org-comment">Docker version 23.0.5, build bc4487a
+</span>
 docker version
-<span class="org-comment-delimiter"># </span><span class="org-comment">Client: Docker Engine - Community</span>
-<span class="org-comment-delimiter">#  </span><span class="org-comment">Cloud integration: v1.0.31</span>
-<span class="org-comment-delimiter">#  </span><span class="org-comment">Version:           23.0.5</span>
-<span class="org-comment-delimiter">#  </span><span class="org-comment">API version:       1.42</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">&lt;...&gt;</span>
-
+<span class="org-comment-delimiter"># </span><span class="org-comment">Client: Docker Engine - Community
+</span><span class="org-comment-delimiter">#  </span><span class="org-comment">Cloud integration: v1.0.31
+</span><span class="org-comment-delimiter">#  </span><span class="org-comment">Version:           23.0.5
+</span><span class="org-comment-delimiter">#  </span><span class="org-comment">API version:       1.42
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">&lt;...&gt;
+</span>
 </pre>
 </div>
 
@@ -190,8 +206,8 @@ To enable Docker Desktop to start on login
 </div>
 </div>
 </li>
-<li><a id="org102420a"></a>ob-docker<br>
-<div class="outline-text-5" id="text-org102420a">
+<li><a id="orgdb47f09"></a>ob-docker<br>
+<div class="outline-text-5" id="text-orgdb47f09">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package docker
   <span class="org-builtin">:ensure</span> t
@@ -204,17 +220,17 @@ To enable Docker Desktop to start on login
 </div>
 </section>
 
-<section id="outline-container-org65434a4" class="outline-2">
-<h2 id="org65434a4">Containerize an application</h2>
-<div class="outline-text-2" id="text-org65434a4">
+<section id="outline-container-org9da9468" class="outline-2">
+<h2 id="org9da9468">Containerize an application</h2>
+<div class="outline-text-2" id="text-org9da9468">
 </div>
-<div id="outline-container-org2cf2000" class="outline-3">
-<h3 id="org2cf2000">Get the app</h3>
-<div class="outline-text-3" id="text-org2cf2000">
+<div id="outline-container-org7dab896" class="outline-3">
+<h3 id="org7dab896">Get the app</h3>
+<div class="outline-text-3" id="text-org7dab896">
 <p>
 Let&rsquo;s say you have the following python repository
 </p>
-<pre class="example" id="org29edca4">
+<pre class="example" id="orgea7bd58">
 ├── my_app/
 │ ├── main.py
 │ ├── README.md
@@ -225,13 +241,13 @@ Let&rsquo;s say you have the following python repository
 </div>
 </div>
 
-<div id="outline-container-org3a9611f" class="outline-3">
-<h3 id="org3a9611f">Build an image</h3>
-<div class="outline-text-3" id="text-org3a9611f">
+<div id="outline-container-orgb670cd0" class="outline-3">
+<h3 id="orgb670cd0">Build an image</h3>
+<div class="outline-text-3" id="text-orgb670cd0">
 </div>
 <ul class="org-ul">
-<li><a id="org87963f8"></a>Create a <code>Dockerfile</code><br>
-<div class="outline-text-5" id="text-org87963f8">
+<li><a id="org63cbe59"></a>Create a <code>Dockerfile</code><br>
+<div class="outline-text-5" id="text-org63cbe59">
 <p>
 To build the image, you&rsquo;ll need to use a Dockerfile. A Dockerfile is simply a text-based file with no file extension that contains a script of instructions. Docker uses this script to build a container image.
 </p>
@@ -262,8 +278,8 @@ This Dockerfileis fairly basic, which is perfect for this application. Your <cod
 </div>
 </li>
 
-<li><a id="org435d051"></a>build<br>
-<div class="outline-text-5" id="text-org435d051">
+<li><a id="org688b21a"></a>build<br>
+<div class="outline-text-5" id="text-org688b21a">
 <p>
 The <code>docker build</code> command uses the Dockerfile to build a new image.
 </p>
@@ -293,9 +309,9 @@ The <code>.</code> at the end of the <code>docker build</code> command tells Doc
 </ul>
 </div>
 
-<div id="outline-container-orgd0df8a5" class="outline-3">
-<h3 id="orgd0df8a5">run an image</h3>
-<div class="outline-text-3" id="text-orgd0df8a5">
+<div id="outline-container-orgdaee975" class="outline-3">
+<h3 id="orgdaee975">run an image</h3>
+<div class="outline-text-3" id="text-orgdaee975">
 <p>
 Now that you have an image, you can run the application in a container using the <code>docker run</code> command.
 </p>
@@ -321,7 +337,7 @@ If you take a quick look at your containers, you should see at least one contain
 </pre>
 </div>
 
-<pre class="example" id="org38d0629">
+<pre class="example" id="org00a556e">
 CONTAINER ID   IMAGE    COMMAND                  CREATED             STATUS        PORTS                     NAMES
 df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes  127.0.0.1:3000-&gt;3000/tcp  kiriclope
 </pre>
@@ -329,9 +345,9 @@ df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minu
 </div>
 </section>
 
-<section id="outline-container-orgbeb1279" class="outline-2">
-<h2 id="orgbeb1279">References</h2>
-<div class="outline-text-2" id="text-orgbeb1279">
+<section id="outline-container-org168dab8" class="outline-2">
+<h2 id="org168dab8">References</h2>
+<div class="outline-text-2" id="text-org168dab8">
 <ul class="org-ul">
 <li><a href="https://www.docker.com/">Docker</a></li>
 <li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
@@ -342,7 +358,7 @@ df784548666d   my_app   "docker-entrypoint.s…"   2 minutes ago       Up 2 minu
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 07 Jan. 2026. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>

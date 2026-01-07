@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 25 Dec. 2023 -->
+<!-- 07 Jan. 2026 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My first post</title>
@@ -55,18 +55,34 @@
     </a>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode({
+      bottom: 'unset', // Remove bottom positioning
+      right: '10px', // Remove default right positioning
+      left: 'unset', // Remove default left positioning
+      label: '🌓', // Custom label/icon
+      time: '0.5s', // Transition time
+      autoMatchOsTheme: false, // Disable automatic theme matching based on OS preferences
+      // location: 'top-right' // Set position to top right
+    }).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
 </header>
 <main id="content">
 <header>
 <h1 class="title">My first post</h1>
 <p class="subtitle">Sep 13, 2023</p>
 </header>
-<section id="outline-container-org85141b4" class="outline-2">
-<h2 id="org85141b4">Why did I build this website?</h2>
+<section id="outline-container-org350f215" class="outline-2">
+<h2 id="org350f215">Why did I build this website?</h2>
 </section>
 </main>
 <footer id="postamble" class="status">
-<p>Last updated 25 Dec. 2023. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
+<p>Last updated 07 Jan. 2026. Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4). <a href="/README.html">Details</a>.</p>
 </footer>
 </body>
 </html>
