@@ -1,6 +1,6 @@
 #+TITLE: News
 
-- 2025-07 Teached at [[https://biortc.com/computational-neuroscience-course-2026/][BioRTC-Simons Computational Neuroscience Course]] in Nigeria
+- <2026-01-14 Wed>Teached about [[https://github.com/shepai/BIORTC_Nigeria/tree/main/Workshops/RNN][AI/ML approaches]] at *BioRTC* [[https://biortc.com/computational-neuroscience-course-2026/][Simons Computational Neuroscience Course]] in Yobe, Nigeria
 
 [[file:files/biortc.png]]
 
